@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>YATECH Automação | Sistemas sob medida para clínicas, escritórios e corretoras</title>
+<meta name="description" content="Sistemas de agendamento, atendimento via WhatsApp e mini-ERPs sob medida para clínicas, consultórios, escritórios de advocacia e corretores de imóveis. Software real, rodando hoje."/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=Geist:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<style>
+    .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+    }
+    .ignition-gradient {
+        background: linear-gradient(135deg, #f7941d 0%, #e2231a 100%);
+    }
+    .ignition-gradient-text {
+        background: linear-gradient(135deg, #f7941d 0%, #e2231a 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+    .ignition-border {
+        border-image: linear-gradient(135deg, #f7941d 0%, #e2231a 100%) 1;
+    }
+    .glass-panel, .glass-card {
+        background: rgba(22, 22, 22, 0.7);
+        backdrop-filter: blur(12px);
+        border: 1px solid rgba(42, 42, 42, 0.5);
+    }
+    body {
+        background-color: #0f0f0f;
+        color: #e5e2e1;
+        overflow-x: hidden;
+    }
+    html {
+        scroll-behavior: smooth;
+        scroll-padding-top: 90px;
+    }
+    @keyframes bounce-slow {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+    }
+    .animate-bounce-slow {
+        animation: bounce-slow 4s ease-in-out infinite;
+    }
+</style>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary-fixed": "#e5e2e1",
+            "surface-dim": "#141313",
+            "surface-container-highest": "#353434",
+            "outline": "#8e9192",
+            "on-error-container": "#ffdad6",
+            "outline-variant": "#444748",
+            "surface-variant": "#353434",
+            "on-primary-container": "#7d7b7b",
+            "on-secondary": "#323029",
+            "on-surface-variant": "#c4c7c7",
+            "on-primary-fixed-variant": "#474646",
+            "inverse-on-surface": "#313030",
+            "primary-fixed-dim": "#c8c6c5",
+            "primary": "#c8c6c5",
+            "on-background": "#e5e2e1",
+            "tertiary-fixed-dim": "#cac6c3",
+            "tertiary-fixed": "#e6e1df",
+            "surface-container-low": "#1c1b1b",
+            "on-secondary-fixed": "#1d1c15",
+            "secondary-fixed": "#e7e2d7",
+            "surface-tint": "#c8c6c5",
+            "on-error": "#690005",
+            "error": "#ffb4ab",
+            "on-surface": "#e5e2e1",
+            "surface-container-lowest": "#0e0e0e",
+            "on-secondary-fixed-variant": "#49473f",
+            "on-secondary-container": "#b9b5ab",
+            "on-primary": "#313030",
+            "background": "#141313",
+            "on-tertiary-container": "#7e7b79",
+            "on-tertiary": "#32302f",
+            "on-tertiary-fixed": "#1d1b1a",
+            "surface-bright": "#3a3939",
+            "surface-container": "#201f1f",
+            "inverse-surface": "#e5e2e1",
+            "error-container": "#93000a",
+            "on-primary-fixed": "#1c1b1b",
+            "inverse-primary": "#5f5e5e",
+            "surface": "#141313",
+            "secondary-container": "#49473f",
+            "tertiary-container": "#100f0e",
+            "on-tertiary-fixed-variant": "#484645",
+            "tertiary": "#cac6c3",
+            "secondary": "#cac6bc",
+            "surface-container-high": "#2b2a2a",
+            "primary-container": "#0f0f0f",
+            "secondary-fixed-dim": "#cac6bc"
+          },
+          borderRadius: {
+            DEFAULT: "0.125rem",
+            lg: "0.25rem",
+            xl: "0.5rem",
+            full: "0.75rem"
+          },
+          spacing: {
+            sm: "12px",
+            "container-max": "1280px",
+            lg: "48px",
+            base: "8px",
+            gutter: "24px",
+            md: "24px",
+            xs: "4px",
+            xl: "80px"
+          },
+          fontFamily: {
+            "display-md": ["Hanken Grotesk"],
+            "label-caps": ["Geist"],
+            "headline-md": ["Hanken Grotesk"],
+            "mono-data": ["Geist"],
+            "display-lg": ["Hanken Grotesk"],
+            "body-lg": ["Hanken Grotesk"],
+            "body-md": ["Hanken Grotesk"]
+          },
+          fontSize: {
+            "mono-data": ["14px", {"lineHeight": "1.5", "letterSpacing": "0px", "fontWeight": "400"}],
+            "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0px", "fontWeight": "400"}],
+            "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "0.05em", "fontWeight": "800"}],
+            "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0px", "fontWeight": "400"}],
+            "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
+            "headline-md": ["20px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "600"}],
+            "display-md": ["32px", {"lineHeight": "1.2", "letterSpacing": "0.04em", "fontWeight": "700"}],
+            "display-sm-mobile": ["24px", {"lineHeight": "1.2", "letterSpacing": "0.04em", "fontWeight": "700"}]
+          }
+        }
+      }
+    }
+</script>
+</head>
+<body class="font-body-md text-body-md bg-surface text-on-surface antialiased">
+<!-- Header / Nav -->
+<header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-md border-b border-surface-container-highest">
+<div class="flex justify-between items-center px-gutter py-sm max-w-container-max mx-auto w-full">
+<a href="#" class="flex items-center gap-2">
+<svg width="140" height="40" viewbox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+<defs>
+<lineargradient id="grad1" x1="0%" x2="100%" y1="0%" y2="100%">
+<stop offset="0%" style="stop-color:#f7941d;stop-opacity:1"></stop>
+<stop offset="100%" style="stop-color:#e2231a;stop-opacity:1"></stop>
+</lineargradient>
+</defs>
+<rect fill="url(#grad1)" height="40" rx="4" width="40" x="0" y="10"></rect>
+<text fill="#f4efe4" font-family="Hanken Grotesk, sans-serif" font-size="32" font-weight="bold" x="50" y="42">YATECH</text>
+</svg>
+</a>
+<nav class="hidden md:flex items-center gap-lg">
+<a class="font-body-md text-body-md text-primary border-b-2 border-primary pb-1" href="#servicos">Serviços</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#cases">Cases</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#como-funciona">Como Funciona</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#contato">Contato</a>
+</nav>
+<button class="ignition-gradient text-on-primary px-gutter py-xs rounded-sm font-label-caps text-label-caps hover:opacity-90 active:scale-95 transition-all uppercase tracking-widest">
+Falar com Especialista
+</button>
+</div>
+</header>
+<main class="pt-20">
+<!-- Section 2: Hero -->
+<section class="relative min-h-[90vh] flex items-center overflow-hidden bg-primary-container">
+<!-- Background Decoration -->
+<div class="absolute inset-0 z-0 opacity-20 pointer-events-none">
+<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-primary/10 blur-[120px] rounded-full"></div>
+<div class="absolute bottom-1/4 right-1/4 w-[500px] h-[500px] bg-error/10 blur-[150px] rounded-full"></div>
+</div>
+<div class="relative z-10 max-w-container-max mx-auto px-gutter w-full grid grid-cols-1 lg:grid-cols-2 gap-xl items-center">
+<div class="space-y-lg">
+<span class="inline-block py-xs px-sm border border-outline-variant rounded-sm font-mono-data text-label-caps text-on-surface-variant uppercase tracking-widest bg-surface-container-low">
+                        Operacional em tempo real
+                    </span>
+<h1 class="font-display-lg text-display-lg text-on-surface leading-tight uppercase max-w-2xl">
+                        Sistemas sob medida que <span class="text-transparent bg-clip-text ignition-gradient">atendem, agendam e vendem</span> por você.
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-xl">
+                        Desenvolvemos ecossistemas de gestão e automação técnica para empresas que buscam soberania operacional. Sem promessas vazias: software real, rodando hoje.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-md pt-md">
+<button class="ignition-gradient text-on-primary px-lg py-sm rounded-sm font-label-caps text-label-caps hover:opacity-90 active:scale-95 transition-all uppercase tracking-widest">
+                            Agendar uma consultoria
+                        </button>
+<button class="bg-transparent border border-outline-variant text-on-surface px-lg py-sm rounded-sm font-label-caps text-label-caps hover:bg-surface-variant transition-all uppercase tracking-widest">
+                            Ver Demonstrativo
+                        </button>
+</div>
+</div>
+<!-- Illustrative Dashboard Mockup -->
+<div class="relative hidden lg:block">
+<div class="glass-panel p-base rounded-lg transform rotate-2 hover:rotate-0 transition-transform duration-500 shadow-2xl">
+<div class="bg-surface-container-lowest rounded-sm overflow-hidden border border-outline-variant">
+<div class="h-8 bg-surface-container-high border-b border-outline-variant flex items-center px-md gap-xs">
+<div class="w-2 h-2 rounded-full bg-error-container"></div>
+<div class="w-2 h-2 rounded-full bg-secondary-container"></div>
+<div class="w-2 h-2 rounded-full bg-tertiary-container"></div>
+</div>
+<div class="p-md space-y-md">
+<div class="grid grid-cols-3 gap-sm">
+<div class="h-20 bg-surface-container rounded-sm border border-outline-variant flex flex-col justify-center items-center">
+<span class="text-on-surface-variant font-label-caps text-[10px] uppercase">Agendamentos</span>
+<span class="font-display-md text-display-md text-on-surface">142</span>
+</div>
+<div class="h-20 ignition-gradient rounded-sm flex flex-col justify-center items-center">
+<span class="text-on-primary font-label-caps text-[10px] uppercase">Conversão</span>
+<span class="font-display-md text-display-md text-on-primary">84%</span>
+</div>
+<div class="h-20 bg-surface-container rounded-sm border border-outline-variant flex flex-col justify-center items-center">
+<span class="text-on-surface-variant font-label-caps text-[10px] uppercase">Lead Time</span>
+<span class="font-display-md text-display-md text-on-surface">1.2h</span>
+</div>
+</div>
+<div class="h-40 bg-surface-container-low rounded-sm border border-outline-variant p-sm overflow-hidden">
+<div class="flex justify-between items-center mb-sm">
+<div class="w-24 h-4 bg-outline-variant/30 rounded-full"></div>
+<div class="w-8 h-4 bg-primary/20 rounded-full"></div>
+</div>
+<div class="space-y-sm">
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-3/4 h-full ignition-gradient"></div>
+</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-1/2 h-full ignition-gradient"></div>
+</div>
+<div class="w-full h-2 bg-surface-container-highest rounded-full overflow-hidden">
+<div class="w-5/6 h-full ignition-gradient"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Secondary Card Float -->
+<div class="absolute -bottom-10 -left-10 glass-panel p-md rounded-lg shadow-xl w-64 hidden xl:block animate-bounce-slow">
+<div class="flex items-center gap-sm mb-xs">
+<span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
+<span class="font-label-caps text-label-caps text-on-surface uppercase">Bot Ativo</span>
+</div>
+<p class="text-[12px] text-on-surface-variant font-mono-data">Respondendo via WhatsApp API...</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Prova / Cases -->
+<section id="cases" class="py-xl bg-[#f4efe4] text-surface-container-lowest">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex flex-col md:flex-row justify-between items-end mb-lg gap-md">
+<div class="max-w-xl">
+<span class="font-mono-data text-label-caps text-surface-container-highest uppercase tracking-widest mb-sm inline-block">Nossos Resultados</span>
+<h2 class="font-display-md text-display-md text-surface-container-lowest uppercase leading-tight">Projetos em Escala Real</h2>
+</div>
+<p class="font-body-md text-body-md text-surface-container-highest max-w-xs">
+                        Não trabalhamos com protótipos. Entregamos infraestrutura robusta para operações que não podem parar.
+                    </p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<!-- Card 1: Projeto Cláudio -->
+<div class="bg-white p-lg rounded-sm border border-surface-container-highest flex flex-col justify-between min-h-[400px] group hover:border-primary transition-all duration-300">
+<div>
+<div class="flex justify-between items-start mb-md">
+<div class="bg-surface-container-low p-sm rounded-sm">
+<span class="material-symbols-outlined text-on-surface" data-icon="calendar_today">calendar_today</span>
+</div>
+<span class="bg-surface-container-lowest text-white px-sm py-xs text-[10px] font-label-caps uppercase tracking-tighter">Em produção</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-surface-container-lowest uppercase mb-sm">Projeto Cláudio</h3>
+<p class="font-body-md text-body-md text-surface-container-highest mb-lg">
+                                Automação integral de agenda para nutricionistas. Integração nativa com WhatsApp Business API e Google Meet para redução de no-show em consultas.
+                            </p>
+</div>
+<div class="pt-lg border-t border-surface-container-highest/20">
+<div class="flex items-baseline gap-xs">
+<span class="font-display-md text-display-md text-transparent bg-clip-text ignition-gradient">-92%</span>
+<span class="font-label-caps text-label-caps text-surface-container-highest uppercase">Abandono de agendamentos</span>
+</div>
+</div>
+</div>
+<!-- Card 2: Sistema Dona Zana -->
+<div class="bg-white p-lg rounded-sm border border-surface-container-highest flex flex-col justify-between min-h-[400px] group hover:border-primary transition-all duration-300">
+<div>
+<div class="flex justify-between items-start mb-md">
+<div class="bg-surface-container-low p-sm rounded-sm">
+<span class="material-symbols-outlined text-on-surface" data-icon="point_of_sale">point_of_sale</span>
+</div>
+<span class="bg-surface-container-lowest text-white px-sm py-xs text-[10px] font-label-caps uppercase tracking-tighter">Em produção</span>
+</div>
+<h3 class="font-headline-md text-headline-md text-surface-container-lowest uppercase mb-sm">Sistema Dona Zana</h3>
+<p class="font-body-md text-body-md text-surface-container-highest mb-lg">
+                                Mini-ERP focado em Delivery. Gestão de estoque real-time, pagamentos Pix integrados no checkout e Dashboard de KPIs centralizado.
+                            </p>
+</div>
+<div class="pt-lg border-t border-surface-container-highest/20">
+<div class="flex items-baseline gap-xs">
+<span class="font-display-md text-display-md text-transparent bg-clip-text ignition-gradient">+40%</span>
+<span class="font-label-caps text-label-caps text-surface-container-highest uppercase">Eficiência operacional</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 3: Serviços -->
+<section class="py-xl bg-primary-container overflow-hidden" id="servicos">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="mb-lg">
+<span class="font-label-caps text-label-caps uppercase text-primary tracking-widest block mb-xs">Nossas Especialidades</span>
+<h2 class="font-display-md text-display-md text-on-surface uppercase border-l-4 border-primary pl-md">Soluções em Automação</h2>
+</div>
+<!-- Bento-ish Grid for Services -->
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
+<!-- Card 1 -->
+<div class="bg-surface border border-surface-container-highest p-md group hover:border-primary/50 transition-all duration-300">
+<div class="mb-md">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform inline-block" data-icon="chat_bubble_outline">chat_bubble_outline</span>
+</div>
+<h3 class="font-label-caps text-label-caps uppercase mb-sm text-on-surface">Automação de Atendimento</h3>
+<p class="font-body-md text-on-surface-variant mb-md">Escalabilidade no WhatsApp para triagem e suporte sem perder o toque humano.</p>
+<div class="mt-auto pt-md border-t border-surface-container-low flex items-center justify-between">
+<span class="font-mono-data text-mono-data text-primary">Resultado</span>
+<span class="font-mono-data text-mono-data text-on-surface font-semibold text-right">Redução de 70% no tempo de resposta manual.</span>
+</div>
+</div>
+<!-- Card 2 -->
+<div class="bg-surface border border-surface-container-highest p-md group hover:border-primary/50 transition-all duration-300">
+<div class="mb-md">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform inline-block" data-icon="calendar_month">calendar_month</span>
+</div>
+<h3 class="font-label-caps text-label-caps uppercase mb-sm text-on-surface">Sistemas de Agendamento</h3>
+<p class="font-body-md text-on-surface-variant mb-md">Sincronização total entre solicitações de clientes e sua equipe técnica ou operacional.</p>
+<div class="mt-auto pt-md border-t border-surface-container-low flex items-center justify-between">
+<span class="font-mono-data text-mono-data text-primary">Resultado</span>
+<span class="font-mono-data text-mono-data text-on-surface font-semibold text-right">Elimine furos na agenda com lembretes automáticos.</span>
+</div>
+</div>
+<!-- Card 3 -->
+<div class="bg-surface border border-surface-container-highest p-md group hover:border-primary/50 transition-all duration-300">
+<div class="mb-md">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform inline-block" data-icon="database">database</span>
+</div>
+<h3 class="font-label-caps text-label-caps uppercase mb-sm text-on-surface">Mini-ERPs e Gestão</h3>
+<p class="font-body-md text-on-surface-variant mb-md">Dashboards customizados para controle de processos internos e métricas vitais.</p>
+<div class="mt-auto pt-md border-t border-surface-container-low flex items-center justify-between">
+<span class="font-mono-data text-mono-data text-primary">Resultado</span>
+<span class="font-mono-data text-mono-data text-on-surface font-semibold text-right">Controle total de estoque e vendas na palma da mão.</span>
+</div>
+</div>
+<!-- Card 4 -->
+<div class="bg-surface border border-surface-container-highest p-md group hover:border-primary/50 transition-all duration-300">
+<div class="mb-md">
+<span class="material-symbols-outlined text-primary group-hover:scale-110 transition-transform inline-block" data-icon="hub">hub</span>
+</div>
+<h3 class="font-label-caps text-label-caps uppercase mb-sm text-on-surface">Integrações Personalizadas</h3>
+<p class="font-body-md text-on-surface-variant mb-md">Conectamos as ferramentas que você já usa em um ecossistema fluido e sem gaps.</p>
+<div class="mt-auto pt-md border-t border-surface-container-low flex items-center justify-between">
+<span class="font-mono-data text-mono-data text-primary">Resultado</span>
+<span class="font-mono-data text-mono-data text-on-surface font-semibold text-right">Seus softwares atuais conversando entre si sem erros.</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Section 4: Como Funciona -->
+<section class="py-xl bg-surface" id="como-funciona">
+<div class="max-w-container-max mx-auto px-gutter">
+<div class="flex flex-col md:flex-row md:items-end justify-between mb-lg gap-md">
+<div class="max-w-2xl">
+<span class="font-label-caps text-label-caps uppercase text-primary tracking-widest block mb-xs">Metodologia YATECH</span>
+<h2 class="font-display-md text-display-md text-on-surface uppercase">A Jornada para a Eficiência</h2>
+</div>
+<div class="font-body-md text-on-surface-variant max-w-sm">
+                        Um processo estruturado para garantir que cada linha de código entregue valor real ao seu negócio.
+                    </div>
+</div>
+<!-- Steps Layout -->
+<div class="relative grid grid-cols-1 md:grid-cols-4 gap-md">
+<!-- Progress Line (Desktop) -->
+<div class="hidden md:block absolute top-1/4 left-0 right-0 h-px bg-surface-container-highest z-0"></div>
+<!-- Step 1 -->
+<div class="relative z-10 bg-surface flex flex-col">
+<div class="w-12 h-12 rounded-full ignition-gradient flex items-center justify-center font-display-md text-surface mb-md shadow-lg shadow-primary/20">01</div>
+<div class="flex items-center gap-xs mb-sm">
+<span class="material-symbols-outlined text-primary scale-75" data-icon="search_insights">search_insights</span>
+<h3 class="font-label-caps text-label-caps uppercase text-on-surface">Diagnóstico</h3>
+</div>
+<p class="font-body-md text-on-surface-variant pr-md">Imersão profunda para identificar gargalos operacionais e oportunidades de automação imediata.</p>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 bg-surface flex flex-col">
+<div class="w-12 h-12 rounded-full border-2 border-surface-container-highest bg-surface flex items-center justify-center font-display-md text-on-surface mb-md">02</div>
+<div class="flex items-center gap-xs mb-sm">
+<span class="material-symbols-outlined text-primary scale-75" data-icon="code_blocks">code_blocks</span>
+<h3 class="font-label-caps text-label-caps uppercase text-on-surface">Desenvolvimento</h3>
+</div>
+<p class="font-body-md text-on-surface-variant pr-md">Arquitetura e codificação da solução personalizada com as melhores práticas de mercado.</p>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 bg-surface flex flex-col">
+<div class="w-12 h-12 rounded-full border-2 border-surface-container-highest bg-surface flex items-center justify-center font-display-md text-on-surface mb-md">03</div>
+<div class="flex items-center gap-xs mb-sm">
+<span class="material-symbols-outlined text-primary scale-75" data-icon="rule">rule</span>
+<h3 class="font-label-caps text-label-caps uppercase text-on-surface">Testes com o cliente</h3>
+</div>
+<p class="font-body-md text-on-surface-variant pr-md">Ambiente de homologação para validação de fluxo e ajustes finos de experiência do usuário.</p>
+</div>
+<!-- Step 4 -->
+<div class="relative z-10 bg-surface flex flex-col">
+<div class="w-12 h-12 rounded-full border-2 border-surface-container-highest bg-surface flex items-center justify-center font-display-md text-on-surface mb-md">04</div>
+<div class="flex items-center gap-xs mb-sm">
+<span class="material-symbols-outlined text-primary scale-75" data-icon="rocket_launch">rocket_launch</span>
+<h3 class="font-label-caps text-label-caps uppercase text-on-surface">Sistema no ar</h3>
+</div>
+<p class="font-body-md text-on-surface-variant">Deploy acompanhado e suporte contínuo para garantir que a transição seja transparente e produtiva.</p>
+</div>
+</div>
+<!-- CTA after how it works -->
+<div class="mt-xl p-lg bg-surface-container-low border border-surface-container-highest flex flex-col md:flex-row items-center justify-between gap-md">
+<p class="font-body-lg text-body-lg text-on-surface max-w-lg">Pronto para digitalizar sua operação com controle absoluto?</p>
+<button class="flex items-center gap-sm group">
+<span class="font-label-caps text-label-caps uppercase text-primary group-hover:mr-sm transition-all">Iniciar Diagnóstico Gratuito</span>
+<span class="material-symbols-outlined text-primary" data-icon="arrow_forward">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Final CTA Section -->
+<section class="relative min-h-[70vh] flex items-center justify-center py-xl px-gutter overflow-hidden bg-primary-container">
+<!-- Atmospheric Background Element -->
+<div class="absolute inset-0 z-0 opacity-20">
+
+</div>
+<div class="relative z-10 max-w-4xl mx-auto text-center">
+<div class="inline-flex items-center gap-2 bg-surface-container-low px-sm py-xs rounded-full border border-surface-container-highest mb-md">
+<span class="material-symbols-outlined text-sm text-[#f7941d]" style="font-variation-settings: 'FILL' 1;">bolt</span>
+<span class="font-mono-data text-label-caps uppercase text-on-surface-variant">Performance Escalonável</span>
+</div>
+<h2 class="font-display-lg text-display-lg text-on-surface mb-lg tracking-tight">Pronto para digitalizar sua operação?</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-xl max-w-2xl mx-auto">
+                    Agende uma análise de gargalos gratuita com nossos especialistas e descubra como a automação técnica pode escalar seu faturamento.
+                </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-md">
+<button class="ignition-gradient text-on-primary px-lg py-md rounded-lg font-display-md text-headline-md font-bold hover:scale-[1.02] active:scale-95 transition-all shadow-2xl">
+                        AGENDAR UMA CONSULTORIA TÉCNICA
+                    </button>
+</div>
+<!-- Trust Badge -->
+<div class="mt-lg flex items-center justify-center gap-base text-on-surface-variant/60 font-mono-data text-mono-data">
+<span class="material-symbols-outlined text-sm">security</span>
+                    Sessão Técnica de 30 minutos sem compromisso
+                </div>
+</div>
+<!-- Structural Grid Overlay -->
+<div class="absolute inset-0 pointer-events-none opacity-[0.03]" style="background-image: linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px); background-size: 80px 80px;"></div>
+</section>
+<!-- Final Map Section -->
+<section class="bg-surface py-lg border-t border-surface-container-highest">
+<div class="max-w-container-max mx-auto px-gutter grid grid-cols-1 md:grid-cols-2 gap-lg items-center">
+<div class="space-y-md">
+<h3 class="font-headline-md text-display-md uppercase">Nossa Base de Operações</h3>
+<p class="text-on-surface-variant font-body-md">Localizados em Jacobina/BA, atendemos empresas em todo o território nacional através de processos 100% digitais e auditorias remotas de alta precisão.</p>
+<div class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary">location_on</span>
+<span class="font-mono-data">Jacobina, Bahia - Brasil</span>
+</div>
+</div>
+<div class="h-64 rounded-xl overflow-hidden border border-surface-container-highest grayscale contrast-125">
+<div class="w-full h-full bg-cover bg-center" data-alt="A cinematic, high-contrast satellite view map of a modern Brazilian city urban grid at twilight. The image uses a deep monochrome palette with subtle orange glowing points representing data nodes or office hubs. The aesthetic is clean, technical, and professional, resembling a command center visualization." data-location="Jacobina, BA" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDdZH66gCPOj3m4jEAr5VGB2_-UCieNFgej_l7mBZL1yuLeeSGazlwE4o3dZXi8DDarvbkkmCTl0hxe3H7s6yPMhtiY8aJrFQCXss93oK3y9UZZ07oSb8NS7DiN-I-pGiNK19al0XfaUbKBw7bGki5Li8AfuMP4yerTTrRGG1RwlLJoIt0QZuHuvyejk_5lHcD9iaw9OCfcKU11Tg9-RovLRcUeI3P_kY7HxB5IukjBAeH-EzQPfA8p29V_BEjg7ORu1QRJop7QLxk')"></div>
+</div>
+</div>
+</section>
+<!-- Footer -->
+<footer id="contato" class="bg-surface-container-lowest border-t border-surface-container-highest">
+<div class="max-w-container-max mx-auto px-gutter py-xl">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-lg mb-xl">
+<!-- Brand Column -->
+<div class="md:col-span-2">
+<div class="flex items-center gap-2 mb-md">
+<span class="material-symbols-outlined text-primary text-3xl" style="font-variation-settings: 'FILL' 1;">precision_manufacturing</span>
+<span class="text-body-lg font-headline-md text-on-surface font-bold tracking-tighter uppercase">YATECH</span>
+</div>
+<p class="text-on-surface-variant max-w-sm mb-lg">Engenharia de processos e automação técnica para clínicas, escritórios e corretoras de imóveis de alto valor. Tecnologia a serviço da escala.</p>
+<div class="flex gap-md">
+<a class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center hover:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-on-surface">hub</span>
+</a>
+<a class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center hover:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-on-surface">chat</span>
+</a>
+<a class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center hover:bg-primary/20 transition-colors" href="#">
+<span class="material-symbols-outlined text-on-surface">alternate_email</span>
+</a>
+</div>
+</div>
+<!-- Links Column -->
+<div>
+<h4 class="font-label-caps text-label-caps uppercase text-on-surface mb-md">Links Úteis</h4>
+<ul class="space-y-sm">
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors font-mono-data text-mono-data" href="#">Privacidade</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors font-mono-data text-mono-data" href="#">Termos de Uso</a></li>
+<li class=""><a class="text-on-surface-variant hover:text-primary transition-colors font-mono-data text-mono-data" href="#">Suporte</a></li>
+</ul>
+</div>
+<!-- Contact Column -->
+<div>
+<h4 class="font-label-caps text-label-caps uppercase text-on-surface mb-md">Contato</h4>
+<ul class="space-y-sm">
+<li class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-sm">mail</span>
+<a class="text-on-surface-variant font-mono-data text-mono-data" href="mailto:yuri@yatech.com.br">yuri@yatech.com.br</a>
+</li>
+<li class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary text-sm">location_on</span>
+<span class="text-on-surface-variant font-mono-data text-mono-data">Jacobina/BA</span>
+</li>
+</ul>
+</div>
+</div>
+<!-- Bottom Copyright -->
+<div class="pt-lg border-t border-surface-container-highest flex flex-col md:flex-row justify-between items-center gap-md">
+<span class="font-mono-data text-mono-data text-on-surface-variant">© 2024 YATECH Automação. Todos os direitos reservados.</span>
+<div class="flex items-center gap-lg">
+<span class="font-mono-data text-[10px] uppercase text-on-surface-variant/40 tracking-widest">Built for Excellence</span>
+<span class="flex h-2 w-2 rounded-full bg-[#f7941d] animate-pulse"></span>
+</div>
+</div>
+</div>
+</footer><script>
+    // Micro-interactions and subtle scroll reveal
+    document.addEventListener('DOMContentLoaded', () => {
+        const observerOptions = { threshold: 0.1 };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('opacity-100', 'translate-y-0');
+                    entry.target.classList.remove('opacity-0', 'translate-y-10');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('section > div').forEach(el => {
+            el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
+            observer.observe(el);
+        });
+    });
+
+    // CTA button glow follow effect
+    document.querySelectorAll('button.ignition-gradient').forEach(btn => {
+        btn.addEventListener('mousemove', (e) => {
+            const rect = btn.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            btn.style.setProperty('--x', `${x}px`);
+            btn.style.setProperty('--y', `${y}px`);
+        });
+    });
+</script>
+</body>
+</html>
