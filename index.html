@@ -5,11 +5,38 @@
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <title>YATECH Automação | Sistemas sob medida para clínicas, escritórios e corretoras</title>
 <meta name="description" content="Sistemas de agendamento, atendimento via WhatsApp e mini-ERPs sob medida para clínicas, consultórios, escritórios de advocacia e corretores de imóveis. Software real, rodando hoje."/>
+<link rel="icon" href="/favicon.png" type="image/png"/>
+<meta property="og:title" content="YATECH Automação | Sistemas sob medida"/>
+<meta property="og:description" content="Agendamento, atendimento WhatsApp e mini-ERPs para clínicas, escritórios e corretoras. Software real, rodando hoje."/>
+<meta property="og:image" content="https://yatech-site.vercel.app/og-cover.png"/>
+<meta property="og:url" content="https://yatech-site.vercel.app/"/>
+<meta property="og:type" content="website"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@100..900&family=Geist:wght@100..900&family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <style>
     .material-symbols-outlined {
         font-variation-settings: 'FILL' 0, 'wght' 200, 'GRAD' 0, 'opsz' 24;
+        visibility: hidden;
+    }
+    .fonts-loaded .material-symbols-outlined {
+        visibility: visible;
+    }
+    .progress-line {
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform 1.4s cubic-bezier(.22, 1, .36, 1);
+    }
+    .progress-line.drawn {
+        transform: scaleX(1);
+    }
+    @media (prefers-reduced-motion: reduce) {
+        *, *::before, *::after {
+            animation-duration: 0.01ms !important;
+            transition-duration: 0.01ms !important;
+            scroll-behavior: auto !important;
+        }
+        .progress-line { transform: scaleX(1); }
+        .material-symbols-outlined { visibility: visible; }
     }
     .ignition-gradient {
         background: linear-gradient(135deg, #f7941d 0%, #e2231a 100%);
@@ -63,7 +90,7 @@
             "on-primary-fixed-variant": "#474646",
             "inverse-on-surface": "#313030",
             "primary-fixed-dim": "#c8c6c5",
-            "primary": "#c8c6c5",
+            "primary": "#f7941d",
             "on-background": "#e5e2e1",
             "tertiary-fixed-dim": "#cac6c3",
             "tertiary-fixed": "#e6e1df",
@@ -102,7 +129,8 @@
             DEFAULT: "0.125rem",
             lg: "0.25rem",
             xl: "0.5rem",
-            full: "0.75rem"
+            "2xl": "1rem",
+            full: "9999px"
           },
           spacing: {
             sm: "12px",
@@ -126,7 +154,7 @@
           fontSize: {
             "mono-data": ["14px", {"lineHeight": "1.5", "letterSpacing": "0px", "fontWeight": "400"}],
             "body-lg": ["18px", {"lineHeight": "1.6", "letterSpacing": "0px", "fontWeight": "400"}],
-            "display-lg": ["48px", {"lineHeight": "1.1", "letterSpacing": "0.05em", "fontWeight": "800"}],
+            "display-lg": ["clamp(30px, 6vw, 52px)", {"lineHeight": "1.08", "letterSpacing": "-0.01em", "fontWeight": "800"}],
             "body-md": ["16px", {"lineHeight": "1.6", "letterSpacing": "0px", "fontWeight": "400"}],
             "label-caps": ["12px", {"lineHeight": "1", "letterSpacing": "0.1em", "fontWeight": "600"}],
             "headline-md": ["20px", {"lineHeight": "1.4", "letterSpacing": "0.02em", "fontWeight": "600"}],
@@ -143,7 +171,7 @@
 <header class="fixed top-0 left-0 right-0 z-50 bg-surface/80 backdrop-blur-md border-b border-surface-container-highest">
 <div class="flex justify-between items-center px-gutter py-sm max-w-container-max mx-auto w-full">
 <a href="#" class="flex items-center gap-2">
-<img src="yatech-logo.png" alt="YATECH Automação" class="h-10 w-auto" style="object-fit: contain;"/>
+<img src="yatech-logo.png" alt="YATECH Automação" width="140" height="40" class="h-10 w-auto" style="object-fit: contain;"/>
 </a>
 <nav class="hidden md:flex items-center gap-lg">
 <a class="nav-link font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#servicos">Serviços</a>
@@ -151,9 +179,21 @@
 <a class="nav-link font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#como-funciona">Como Funciona</a>
 <a class="nav-link font-body-md text-body-md text-on-surface-variant hover:text-on-surface transition-colors" href="#contato">Contato</a>
 </nav>
-<a href="https://wa.me/5511978322152?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais" target="_blank" rel="noopener noreferrer" class="ignition-gradient text-on-primary px-sm md:px-gutter py-xs rounded-sm font-label-caps text-[10px] md:text-label-caps hover:opacity-90 active:scale-95 transition-all uppercase tracking-wide md:tracking-widest inline-block text-center leading-tight max-w-[104px] md:max-w-none whitespace-normal md:whitespace-nowrap">
-Falar com Especialista
+<div class="flex items-center gap-sm">
+<a href="https://wa.me/5511978322152?text=Ol%C3%A1%2C%20vim%20pelo%20site%20e%20gostaria%20de%20saber%20mais" target="_blank" rel="noopener noreferrer" class="ignition-gradient text-[#1c1208] px-md md:px-gutter py-xs md:py-sm rounded-sm font-label-caps text-[11px] md:text-label-caps hover:opacity-90 active:scale-95 transition-all uppercase tracking-wide md:tracking-widest inline-block text-center whitespace-nowrap">
+<span class="md:hidden">Falar agora</span>
+<span class="hidden md:inline">Falar com Especialista</span>
 </a>
+<button id="menu-btn" class="md:hidden w-10 h-10 flex items-center justify-center text-on-surface" aria-label="Abrir menu" aria-expanded="false" aria-controls="mobile-menu">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</div>
+<div id="mobile-menu" class="hidden md:hidden bg-surface border-t border-surface-container-highest px-gutter py-md flex-col gap-xs">
+<a class="py-sm text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps uppercase tracking-widest transition-colors" href="#servicos">Serviços</a>
+<a class="py-sm text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps uppercase tracking-widest transition-colors" href="#cases">Cases</a>
+<a class="py-sm text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps uppercase tracking-widest transition-colors" href="#como-funciona">Como Funciona</a>
+<a class="py-sm text-on-surface-variant hover:text-on-surface font-label-caps text-label-caps uppercase tracking-widest transition-colors" href="#contato">Contato</a>
 </div>
 </header>
 <main class="pt-20">
@@ -170,7 +210,7 @@ Falar com Especialista
                         Operacional em tempo real
                     </span>
 <h1 class="font-display-lg text-display-lg text-surface-container-lowest leading-tight uppercase max-w-2xl">
-                        Sistemas sob medida que <span class="text-surface-container-lowest">atendem, agendam e vendem</span> por você.
+                        Sistemas sob medida que <span class="ignition-gradient-text">atendem, agendam e vendem</span> por você.
                     </h1>
 <p class="font-body-lg text-body-lg text-surface-container-highest max-w-xl">
                         Desenvolvemos ecossistemas de gestão e automação técnica para empresas que buscam soberania operacional. Sem promessas vazias: software real, rodando hoje.
@@ -179,9 +219,9 @@ Falar com Especialista
 <a href="https://calendly.com/yatech-contato/30min" target="_blank" rel="noopener noreferrer" class="bg-surface-container-lowest text-on-surface px-lg py-sm rounded-sm font-label-caps text-label-caps hover:opacity-90 active:scale-95 transition-all uppercase tracking-widest inline-block text-center">
                             Agendar uma consultoria
                         </a>
-<button class="bg-transparent border border-surface-container-highest text-surface-container-lowest px-lg py-sm rounded-sm font-label-caps text-label-caps hover:bg-surface-container-lowest/5 transition-all uppercase tracking-widest">
+<a href="#cases" class="bg-transparent border border-surface-container-highest text-surface-container-lowest px-lg py-sm rounded-sm font-label-caps text-label-caps hover:bg-surface-container-lowest/5 transition-all uppercase tracking-widest inline-block text-center">
                             Ver Demonstrativo
-                        </button>
+                        </a>
 </div>
 </div>
 <!-- Illustrative Dashboard Mockup -->
@@ -236,6 +276,18 @@ Falar com Especialista
 </div>
 <p class="text-[12px] text-on-surface-variant font-mono-data">Respondendo via WhatsApp API...</p>
 </div>
+</div>
+</div>
+</section>
+<!-- Setores atendidos -->
+<section class="py-lg bg-[#f4efe4] border-y border-surface-container-highest/30">
+<div class="max-w-container-max mx-auto px-gutter">
+<p class="font-label-caps text-label-caps uppercase tracking-widest text-surface-container-highest mb-md text-center">Feito para o seu setor</p>
+<div class="flex flex-wrap justify-center gap-sm">
+<span class="flex items-center gap-xs px-md py-sm border border-surface-container-highest/40 rounded-full font-mono-data text-mono-data text-surface-container-lowest bg-white/40"><span class="material-symbols-outlined scale-75 text-primary">medical_services</span>Clínicas e Consultórios</span>
+<span class="flex items-center gap-xs px-md py-sm border border-surface-container-highest/40 rounded-full font-mono-data text-mono-data text-surface-container-lowest bg-white/40"><span class="material-symbols-outlined scale-75 text-primary">gavel</span>Escritórios de Advocacia</span>
+<span class="flex items-center gap-xs px-md py-sm border border-surface-container-highest/40 rounded-full font-mono-data text-mono-data text-surface-container-lowest bg-white/40"><span class="material-symbols-outlined scale-75 text-primary">apartment</span>Imobiliárias</span>
+<span class="flex items-center gap-xs px-md py-sm border border-surface-container-highest/40 rounded-full font-mono-data text-mono-data text-surface-container-lowest bg-white/40"><span class="material-symbols-outlined scale-75 text-primary">construction</span>Construtoras</span>
 </div>
 </div>
 </section>
@@ -313,7 +365,7 @@ Falar com Especialista
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
 <!-- Card 1: Projeto Cláudio -->
-<div class="bg-white p-lg rounded-sm border border-surface-container-highest flex flex-col justify-between min-h-[400px] group hover:border-primary transition-all duration-300">
+<div class="bg-white p-lg rounded-sm border border-surface-container-highest flex flex-col justify-between min-h-0 md:min-h-[400px] group hover:border-primary transition-all duration-300">
 <div>
 <div class="flex justify-between items-start mb-md">
 <div class="bg-surface-container-low p-sm rounded-sm">
@@ -328,13 +380,13 @@ Falar com Especialista
 </div>
 <div class="pt-lg border-t border-surface-container-highest/20">
 <div class="flex items-baseline gap-xs">
-<span class="font-display-md text-display-md text-surface-container-lowest">-92%</span>
+<span class="font-display-md text-display-md text-surface-container-lowest" data-counter data-target="-92" data-suffix="%">0%</span>
 <span class="font-label-caps text-label-caps text-surface-container-highest uppercase">Abandono de agendamentos</span>
 </div>
 </div>
 </div>
 <!-- Card 2: Sistema Dona Zana -->
-<div class="bg-white p-lg rounded-sm border border-surface-container-highest flex flex-col justify-between min-h-[400px] group hover:border-primary transition-all duration-300">
+<div class="bg-white p-lg rounded-sm border border-surface-container-highest flex flex-col justify-between min-h-0 md:min-h-[400px] group hover:border-primary transition-all duration-300">
 <div>
 <div class="flex justify-between items-start mb-md">
 <div class="bg-surface-container-low p-sm rounded-sm">
@@ -349,7 +401,7 @@ Falar com Especialista
 </div>
 <div class="pt-lg border-t border-surface-container-highest/20">
 <div class="flex items-baseline gap-xs">
-<span class="font-display-md text-display-md text-surface-container-lowest">+40%</span>
+<span class="font-display-md text-display-md text-surface-container-lowest" data-counter data-target="40" data-suffix="%">0%</span>
 <span class="font-label-caps text-label-caps text-surface-container-highest uppercase">Eficiência operacional</span>
 </div>
 </div>
@@ -372,7 +424,9 @@ Falar com Especialista
 <!-- Steps Layout -->
 <div class="relative grid grid-cols-1 md:grid-cols-4 gap-md">
 <!-- Progress Line (Desktop) -->
-<div class="hidden md:block absolute top-1/4 left-0 right-0 h-px bg-surface-container-highest z-0"></div>
+<div class="progress-line hidden md:block absolute top-1/4 left-0 right-0 h-px bg-surface-container-highest z-0"></div>
+<!-- Progress Line (Mobile, vertical) -->
+<div class="md:hidden absolute left-6 top-4 bottom-4 w-px bg-surface-container-highest/40 z-0"></div>
 <!-- Step 1 -->
 <div class="relative z-10 bg-[#f4efe4] flex flex-col">
 <div class="w-12 h-12 rounded-full bg-surface-container-lowest flex items-center justify-center font-display-md text-on-surface mb-md shadow-lg shadow-primary/20">01</div>
@@ -413,15 +467,15 @@ Falar com Especialista
 <!-- CTA after how it works -->
 <div class="mt-xl p-lg bg-surface-container-low border border-surface-container-highest flex flex-col md:flex-row items-center justify-between gap-md">
 <p class="font-body-lg text-body-lg text-on-surface max-w-lg">Pronto para digitalizar sua operação?</p>
-<button class="flex items-center gap-sm group">
+<a href="https://wa.me/5511978322152?text=Ol%C3%A1%2C%20quero%20iniciar%20o%20diagn%C3%B3stico%20gratuito" target="_blank" rel="noopener noreferrer" class="flex items-center gap-sm group">
 <span class="font-label-caps text-label-caps uppercase text-primary group-hover:mr-sm transition-all">Iniciar Diagnóstico Gratuito</span>
 <span class="material-symbols-outlined text-primary" data-icon="arrow_forward">arrow_forward</span>
-</button>
+</a>
 </div>
 </div>
 </section>
 <!-- Final CTA Section -->
-<section class="relative h-[597px] flex items-center justify-center px-gutter overflow-hidden bg-[#f4efe4]">
+<section class="relative min-h-[600px] py-lg flex items-center justify-center px-gutter overflow-hidden bg-[#f4efe4]">
 <div class="relative z-10 max-w-6xl mx-auto w-full">
 <div class="rounded-2xl overflow-hidden shadow-2xl bg-white p-2 border border-black/5">
 <div class="calendly-inline-widget" data-url="https://calendly.com/yatech-contato/30min" data-resize="false" style="min-width:320px; height:530px;"></div>
@@ -451,6 +505,7 @@ Falar com Especialista
 </div>
 </div>
 </section>
+</main>
 <!-- Footer -->
 <footer id="contato" class="bg-[#f4efe4] border-t border-surface-container-highest">
 <div class="max-w-container-max mx-auto px-gutter py-xl">
@@ -462,24 +517,21 @@ Falar com Especialista
 </div>
 <p class="text-surface-container-highest max-w-sm mb-lg">Engenharia de processos e automação técnica para clínicas, escritórios e corretoras de imóveis de alto valor. Tecnologia a serviço da escala.</p>
 <div class="flex gap-md">
-<a class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center hover:bg-primary/20 transition-colors" href="#">
-<span class="material-symbols-outlined text-on-surface">hub</span>
-</a>
-<a class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center hover:bg-primary/20 transition-colors" href="#">
+<a class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center hover:bg-primary/20 transition-colors" href="https://wa.me/5511978322152?text=Ol%C3%A1%2C%20vim%20pelo%20site" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
 <span class="material-symbols-outlined text-on-surface">chat</span>
 </a>
-<a class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center hover:bg-primary/20 transition-colors" href="#">
+<a class="w-10 h-10 rounded-lg bg-surface-container-high flex items-center justify-center hover:bg-primary/20 transition-colors" href="mailto:yuri@yatech.com.br" aria-label="E-mail">
 <span class="material-symbols-outlined text-on-surface">alternate_email</span>
 </a>
 </div>
 </div>
 <!-- Links Column -->
 <div>
-<h4 class="font-label-caps text-label-caps uppercase text-surface-container-lowest mb-md">Links Úteis</h4>
+<h4 class="font-label-caps text-label-caps uppercase text-surface-container-lowest mb-md">Navegação</h4>
 <ul class="space-y-sm">
-<li class=""><a class="text-surface-container-highest hover:text-surface-container-lowest transition-colors font-mono-data text-mono-data" href="#">Privacidade</a></li>
-<li class=""><a class="text-surface-container-highest hover:text-surface-container-lowest transition-colors font-mono-data text-mono-data" href="#">Termos de Uso</a></li>
-<li class=""><a class="text-surface-container-highest hover:text-surface-container-lowest transition-colors font-mono-data text-mono-data" href="#">Suporte</a></li>
+<li><a class="text-surface-container-highest hover:text-surface-container-lowest transition-colors font-mono-data text-mono-data" href="#servicos">Serviços</a></li>
+<li><a class="text-surface-container-highest hover:text-surface-container-lowest transition-colors font-mono-data text-mono-data" href="#cases">Cases</a></li>
+<li><a class="text-surface-container-highest hover:text-surface-container-lowest transition-colors font-mono-data text-mono-data" href="#como-funciona">Como Funciona</a></li>
 </ul>
 </div>
 <!-- Contact Column -->
@@ -499,7 +551,7 @@ Falar com Especialista
 </div>
 <!-- Bottom Copyright -->
 <div class="pt-lg border-t border-surface-container-highest flex flex-col md:flex-row justify-between items-center gap-md">
-<span class="font-mono-data text-mono-data text-surface-container-highest">© 2026 YATECH Automação. Todos os direitos reservados.</span>
+<span class="font-mono-data text-mono-data text-surface-container-highest">© 2026 YATECH LTDA · CNPJ 00.000.000/0001-00 · Jacobina/BA · Todos os direitos reservados.</span>
 <div class="flex items-center gap-lg">
 <span class="font-mono-data text-[10px] uppercase text-surface-container-highest/40 tracking-widest">Built for Excellence</span>
 <span class="flex h-2 w-2 rounded-full bg-[#f7941d] animate-pulse"></span>
@@ -507,23 +559,97 @@ Falar com Especialista
 </div>
 </div>
 </footer><script>
-    // Micro-interactions and subtle scroll reveal
+    // Evita que os ícones apareçam como texto antes da fonte carregar
+    if (document.fonts && document.fonts.load) {
+        document.fonts.load('24px "Material Symbols Outlined"').then(() => {
+            document.documentElement.classList.add('fonts-loaded');
+        }).catch(() => document.documentElement.classList.add('fonts-loaded'));
+        setTimeout(() => document.documentElement.classList.add('fonts-loaded'), 2500); // fallback
+    } else {
+        document.documentElement.classList.add('fonts-loaded');
+    }
+
+    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+    // Menu mobile
+    const menuBtn = document.getElementById('menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+        menuBtn.addEventListener('click', () => {
+            const isHidden = mobileMenu.classList.toggle('hidden');
+            mobileMenu.classList.toggle('flex', !isHidden);
+            menuBtn.setAttribute('aria-expanded', String(!isHidden));
+            menuBtn.querySelector('span').textContent = isHidden ? 'menu' : 'close';
+        });
+        mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('flex');
+            menuBtn.setAttribute('aria-expanded', 'false');
+            menuBtn.querySelector('span').textContent = 'menu';
+        }));
+    }
+
+    // Micro-interactions and subtle scroll reveal (com stagger)
     document.addEventListener('DOMContentLoaded', () => {
-        const observerOptions = { threshold: 0.1 };
+        if (reduceMotion) return; // sem animações para quem prefere movimento reduzido
+
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('opacity-100', 'translate-y-0');
                     entry.target.classList.remove('opacity-0', 'translate-y-10');
+                    observer.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
 
         document.querySelectorAll('section > div').forEach(el => {
             el.classList.add('transition-all', 'duration-700', 'opacity-0', 'translate-y-10');
             observer.observe(el);
         });
+
+        // Stagger: cards de grids aparecem em cascata
+        document.querySelectorAll('section .grid > div').forEach((el, i) => {
+            el.style.transitionDelay = `${(i % 4) * 90}ms`;
+        });
+
+        // Linha de progresso da metodologia "desenha" ao entrar na tela
+        const line = document.querySelector('.progress-line');
+        if (line) {
+            const lineObs = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('drawn');
+                        lineObs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.3 });
+            lineObs.observe(line);
+        }
     });
+
+    // Contadores animados nas métricas dos cases
+    const counterObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            const el = entry.target;
+            const target = parseFloat(el.dataset.target);
+            const suffix = el.dataset.suffix || '';
+            const format = (v) => (target > 0 ? '+' : '') + Math.round(v) + suffix;
+            if (reduceMotion) { el.textContent = format(target); counterObs.unobserve(el); return; }
+            const dur = 1200;
+            const start = performance.now();
+            const tick = (now) => {
+                const p = Math.min((now - start) / dur, 1);
+                const eased = 1 - Math.pow(1 - p, 3); // easeOutCubic
+                el.textContent = format(target * eased);
+                if (p < 1) requestAnimationFrame(tick);
+            };
+            requestAnimationFrame(tick);
+            counterObs.unobserve(el);
+        });
+    }, { threshold: 0.5 });
+    document.querySelectorAll('[data-counter]').forEach(el => counterObs.observe(el));
 
     // CTA button glow follow effect
     document.querySelectorAll('.ignition-gradient').forEach(btn => {
