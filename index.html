@@ -70,11 +70,26 @@
     .animate-bounce-slow {
         animation: bounce-slow 4s ease-in-out infinite;
     }
-    .animate-bounce-slow.glass-panel {
+    .bot-active-card {
         backdrop-filter: none;
         -webkit-backdrop-filter: none;
         background: rgba(22, 22, 22, 0.92);
-        will-change: transform;
+        transform: translateZ(0);
+        backface-visibility: hidden;
+        contain: paint;
+    }
+    .bot-active-card .material-symbols-outlined {
+        animation: bot-icon-pulse 1.8s ease-in-out infinite;
+    }
+    @keyframes bot-icon-pulse {
+        0%, 100% {
+            opacity: 1;
+            transform: scale(1);
+        }
+        50% {
+            opacity: 0.72;
+            transform: scale(1.08);
+        }
     }
 </style>
 <script id="tailwind-config">
@@ -275,7 +290,7 @@
 </div>
 </div>
 <!-- Secondary Card Float -->
-<div class="absolute -bottom-10 -left-10 glass-panel p-md rounded-lg shadow-xl w-64 hidden xl:block animate-bounce-slow">
+<div class="absolute -bottom-10 -left-10 glass-panel p-md rounded-lg shadow-xl w-64 hidden xl:block bot-active-card">
 <div class="flex items-center gap-sm mb-xs">
 <span class="material-symbols-outlined text-primary" data-icon="check_circle">check_circle</span>
 <span class="font-label-caps text-label-caps text-on-surface uppercase">Bot Ativo</span>
