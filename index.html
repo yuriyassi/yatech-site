@@ -300,165 +300,116 @@
 </div>
 </div>
 </section>
-<!-- Setores atendidos -->
-<section class="py-lg bg-[#f4efe4] border-y border-surface-container-highest/30" id="setores">
-<div class="max-w-container-max mx-auto px-gutter">
-<p class="font-label-caps text-label-caps uppercase tracking-widest text-surface-container-highest mb-xs text-center">Feito para o seu setor</p>
-<p class="font-mono-data text-mono-data text-surface-container-highest text-center mb-md flex items-center justify-center gap-xs">
-<span class="material-symbols-outlined scale-75 text-primary animate-bounce-slow">touch_app</span>
-Clique e veja a solução completa
-</p>
-<div class="flex flex-wrap justify-center gap-sm">
-<button type="button" data-setor="clinicas" aria-expanded="false" aria-controls="setor-panel" class="setor-btn flex items-center gap-xs px-md py-sm border border-surface-container-highest/40 rounded-full font-mono-data text-mono-data text-surface-container-lowest bg-white/40 transition-all cursor-pointer"><span class="material-symbols-outlined scale-75 text-primary">medical_services</span>Clínicas e Consultórios</button>
-<button type="button" data-setor="advocacia" aria-expanded="false" aria-controls="setor-panel" class="setor-btn flex items-center gap-xs px-md py-sm border border-surface-container-highest/40 rounded-full font-mono-data text-mono-data text-surface-container-lowest bg-white/40 transition-all cursor-pointer"><span class="material-symbols-outlined scale-75 text-primary">gavel</span>Escritórios de Advocacia</button>
-<button type="button" data-setor="imobiliarias" aria-expanded="false" aria-controls="setor-panel" class="setor-btn flex items-center gap-xs px-md py-sm border border-surface-container-highest/40 rounded-full font-mono-data text-mono-data text-surface-container-lowest bg-white/40 transition-all cursor-pointer"><span class="material-symbols-outlined scale-75 text-primary">apartment</span>Imobiliárias</button>
-<button type="button" data-setor="construtoras" aria-expanded="false" aria-controls="setor-panel" class="setor-btn flex items-center gap-xs px-md py-sm border border-surface-container-highest/40 rounded-full font-mono-data text-mono-data text-surface-container-lowest bg-white/40 transition-all cursor-pointer"><span class="material-symbols-outlined scale-75 text-primary">construction</span>Construtoras</button>
-</div>
-<div id="setor-panel" class="hidden mt-lg bg-surface border border-surface-container-highest rounded-2xl p-lg max-w-3xl mx-auto"></div>
-</div>
-</section>
-<script>
-(function(){
-var setoresData = {
-clinicas: {
-icon: 'medical_services',
-titulo: 'Atendimento e agenda automatizados',
-dor: 'Clínicas perdem tempo com ligações, confirmações manuais e remarcações. A YATECH cria fluxos no WhatsApp que automatizam agendamento, confirmação de consulta e acompanhamento do paciente.',
-entregamos: ['Agendamento via WhatsApp.', 'Confirmação automática de consultas.', 'Lembretes para reduzir faltas.', 'Remarcação simples e rápida.', 'Pós-consulta com orientações e retorno.'],
-resultado: 'Menos no-show, recepção mais leve e atendimento mais rápido.',
-cta: 'Quero organizar a agenda da minha clínica.'
-},
-advocacia: {
-icon: 'gavel',
-titulo: 'Triagem e acompanhamento jurídico',
-dor: 'Escritórios precisam responder rápido, qualificar leads e manter organização no atendimento. A YATECH estrutura o fluxo inicial de contato e centraliza informações em um processo claro e rastreável.',
-entregamos: ['Triagem automática de novos contatos.', 'Classificação por área de atuação.', 'Coleta de dados e documentos iniciais.', 'Organização de status e retornos.', 'Histórico centralizado no CRM.'],
-resultado: 'Mais agilidade no atendimento, menos perda de oportunidades e mais controle sobre os casos.',
-cta: 'Quero profissionalizar o atendimento do meu escritório.'
-},
-imobiliarias: {
-icon: 'apartment',
-titulo: 'Captação e visitas automatizadas',
-dor: 'Imobiliárias perdem leads por demora no retorno e desorganização no agendamento. A YATECH transforma o WhatsApp em um funil comercial que qualifica o interessado e direciona para a visita certa.',
-entregamos: ['Captação de leads por WhatsApp.', 'Qualificação por perfil, faixa de valor e região.', 'Envio automático de imóveis compatíveis.', 'Agendamento de visitas.', 'Follow-up para leads sem resposta.'],
-resultado: 'Mais visitas marcadas, menos lead frio e maior conversão comercial.',
-cta: 'Quero aumentar a conversão da minha imobiliária.'
-},
-construtoras: {
-icon: 'construction',
-titulo: 'Comunicação e pós-venda integrados',
-dor: 'Construtoras precisam manter clientes informados, organizar demandas e reduzir ruídos entre setores. A YATECH cria uma camada de automação que conecta atendimento, obra e pós-venda.',
-entregamos: ['Comunicação automatizada com clientes.', 'Atualizações de andamento.', 'Central de chamados e solicitações.', 'Envio de documentos e comunicados.', 'Organização de pendências no sistema interno.'],
-resultado: 'Menos retrabalho, mais previsibilidade e melhor experiência para o cliente.',
-cta: 'Quero organizar a comunicação da minha construtora.'
-}
-};
-var buttons = document.querySelectorAll('.setor-btn');
-var panel = document.getElementById('setor-panel');
-var activeKey = null;
-var inactiveClasses = ['border-surface-container-highest/40', 'bg-white/40', 'text-surface-container-lowest'];
-var activeClasses = ['border-primary', 'bg-primary/10', 'text-surface-container-lowest'];
-function renderPanel(key){
-var d = setoresData[key];
-var items = d.entregamos.map(function(i){
-return '<li class="flex items-start gap-xs"><span class="material-symbols-outlined scale-75 text-primary mt-[2px]">check_circle</span><span>' + i + '</span></li>';
-}).join('');
-var waText = encodeURIComponent(d.cta);
-panel.innerHTML = '<div class="flex items-center gap-sm mb-sm"><span class="material-symbols-outlined text-primary">' + d.icon + '</span><h3 class="font-label-caps text-label-caps uppercase text-on-surface">' + d.titulo + '</h3></div>' +
-'<p class="text-on-surface-variant mb-md">' + d.dor + '</p>' +
-'<p class="font-label-caps text-label-caps uppercase text-on-surface-variant mb-xs">O que entregamos</p>' +
-'<ul class="space-y-xs mb-md text-on-surface">' + items + '</ul>' +
-'<p class="text-on-surface-variant mb-md"><span class="font-label-caps text-label-caps uppercase text-primary">Resultado esperado:</span> ' + d.resultado + '</p>' +
-'<a href="https://wa.me/5511978322152?text=' + waText + '" target="_blank" rel="noopener noreferrer" class="inline-block bg-surface-container-lowest text-on-surface px-lg py-sm rounded-sm font-label-caps text-label-caps hover:opacity-90 active:scale-95 transition-all uppercase tracking-widest">' + d.cta + '</a>';
-}
-buttons.forEach(function(btn){
-btn.addEventListener('click', function(){
-var key = btn.getAttribute('data-setor');
-buttons.forEach(function(b){
-b.classList.remove.apply(b.classList, activeClasses);
-b.classList.add.apply(b.classList, inactiveClasses);
-b.setAttribute('aria-expanded', 'false');
-});
-if(activeKey === key){
-activeKey = null;
-panel.classList.add('hidden');
-return;
-}
-activeKey = key;
-renderPanel(key);
-panel.classList.remove('hidden');
-btn.classList.remove.apply(btn.classList, inactiveClasses);
-btn.classList.add.apply(btn.classList, activeClasses);
-btn.setAttribute('aria-expanded', 'true');
-});
-});
-})();
-</script>
 <!-- Section 3: Serviços -->
 <section class="py-xl bg-[#f4efe4] overflow-hidden" id="servicos">
 <div class="max-w-container-max mx-auto px-gutter">
-<div class="mb-lg">
-<span class="font-label-caps text-label-caps uppercase text-surface-container-highest tracking-widest block mb-xs">Nossas Especialidades</span>
-<h2 class="font-display-md text-display-md text-surface-container-lowest uppercase border-l-4 border-surface-container-highest pl-md">Soluções em Automação</h2>
+<div class="mb-lg text-center">
+<span class="font-label-caps text-label-caps uppercase text-surface-container-highest tracking-widest block mb-xs">Soluções por Segmento</span>
+<h2 class="font-display-md text-display-md text-surface-container-lowest uppercase mb-sm">Feito para o seu setor</h2>
+<p class="font-body-md text-on-surface-variant max-w-2xl mx-auto">Cada projeto é pensado para resolver um processo real do negócio, com integração entre comunicação, operação e acompanhamento interno.</p>
 </div>
-<!-- Bento-ish Grid for Services -->
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-md">
-<!-- Card 1 -->
-<div class="bg-surface border border-surface-container-highest p-md group hover:border-primary/50 hover:-translate-y-1 transition-all duration-300 flex flex-col rounded-2xl">
-<div class="mb-md">
-<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center transition-colors duration-300 group-hover:bg-gradient-to-br group-hover:from-[#f7941d] group-hover:to-[#e2231a]">
-<span class="material-symbols-outlined text-primary transition-colors duration-300 group-hover:text-white" data-icon="chat_bubble_outline">chat_bubble_outline</span>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-md">
+
+<div class="bg-surface border border-surface-container-highest p-lg group hover:border-primary/50 transition-all duration-300 flex flex-col rounded-2xl">
+<div class="flex items-center gap-sm mb-md">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="medical_services">medical_services</span>
 </div>
-</div>
-<h3 class="font-label-caps text-label-caps uppercase mb-sm text-on-surface">Automação de Atendimento</h3>
-<p class="font-body-md text-on-surface-variant mb-md">Atendimento automatizado no WhatsApp que qualifica contatos, responde dúvidas e direciona clientes sem perder o toque humano.</p>
-<div class="mt-auto pt-md border-t border-surface-container-low flex items-center justify-between">
-<span class="font-mono-data text-mono-data text-primary">Resultado</span>
-<span class="font-mono-data text-mono-data text-on-surface font-semibold text-right">Redução de 70% no tempo de resposta manual.</span>
+<div>
+<span class="font-mono-data text-mono-data text-primary block">Clínicas e Consultórios</span>
+<h3 class="font-label-caps text-label-caps uppercase text-on-surface">Atendimento e agenda automatizados</h3>
 </div>
 </div>
-<!-- Card 2 -->
-<div class="bg-surface border border-surface-container-highest p-md group hover:border-primary/50 hover:-translate-y-1 transition-all duration-300 flex flex-col rounded-2xl">
-<div class="mb-md">
-<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center transition-colors duration-300 group-hover:bg-gradient-to-br group-hover:from-[#f7941d] group-hover:to-[#e2231a]">
-<span class="material-symbols-outlined text-primary transition-colors duration-300 group-hover:text-white" data-icon="calendar_month">calendar_month</span>
+<p class="font-body-md text-on-surface-variant mb-md">Clínicas perdem tempo com ligações, confirmações manuais e remarcações. A YATECH cria fluxos no WhatsApp que automatizam agendamento, confirmação de consulta e acompanhamento do paciente.</p>
+<p class="font-label-caps text-label-caps uppercase text-on-surface-variant mb-xs">O que entregamos</p>
+<ul class="space-y-xs mb-md text-on-surface">
+<li class="flex items-start gap-xs"><span class="material-symbols-outlined scale-75 text-primary mt-[2px]">check_circle</span><span>Agendamento via WhatsApp.</span></li>
+<li class="flex items-start gap-xs"><span class="material-symbols-outlined scale-75 text-primary mt-[2px]">check_circle</span><span>Confirmação automática de consultas.</span></li>
+<li class="flex items-start gap-xs"><span class="material-symbols-outlined scale-75 text-primary mt-[2px]">check_circle</span><span>Lembretes para reduzir faltas.</span></li>
+<li class="flex items-start gap-xs"><span class="material-symbols-outlined scale-75 text-primary mt-[2px]">check_circle</span><span>Remarcação simples e rápida.</span></li>
+<li class="flex items-start gap-xs"><span class="material-symbols-outlined scale-75 text-primary mt-[2px]">check_circle</span><span>Pós-consulta com orientações e retorno.</span></li>
+</ul>
+<div class="mt-auto pt-md border-t border-surface-container-low">
+<p class="text-on-surface-variant mb-md"><span class="font-label-caps text-label-caps uppercase text-primary">Resultado esperado:</span> Menos no-show, recepção mais leve e atendimento mais rápido.</p>
+<a href="https://wa.me/5511978322152?text=Quero%20organizar%20a%20agenda%20da%20minha%20cl%C3%ADnica." target="_blank" rel="noopener noreferrer" class="inline-block w-full text-center bg-surface-container-lowest text-on-surface px-lg py-sm rounded-sm font-label-caps text-label-caps hover:opacity-90 active:scale-95 transition-all uppercase tracking-widest">Quero organizar a agenda da minha clínica.</a>
 </div>
 </div>
-<h3 class="font-label-caps text-label-caps uppercase mb-sm text-on-surface">Sistemas de Agendamento</h3>
-<p class="font-body-md text-on-surface-variant mb-md">Agenda sincronizada em tempo real entre clientes e sua equipe, sem conflitos de horário nem retrabalho manual.</p>
-<div class="mt-auto pt-md border-t border-surface-container-low flex items-center justify-between">
-<span class="font-mono-data text-mono-data text-primary">Resultado</span>
-<span class="font-mono-data text-mono-data text-on-surface font-semibold text-right">Elimine furos na agenda com followup e lembretes automáticos.</span>
+
+<div class="bg-surface border border-surface-container-highest p-lg group hover:border-primary/50 transition-all duration-300 flex flex-col rounded-2xl">
+<div class="flex items-center gap-sm mb-md">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="gavel">gavel</span>
+</div>
+<div>
+<span class="font-mono-data text-mono-data text-primary block">Escritórios de Advocacia</span>
+<h3 class="font-label-caps text-label-caps uppercase text-on-surface">Triagem e acompanhamento jurídico</h3>
 </div>
 </div>
-<!-- Card 3 -->
-<div class="bg-surface border border-surface-container-highest p-md group hover:border-primary/50 hover:-translate-y-1 transition-all duration-300 flex flex-col rounded-2xl">
-<div class="mb-md">
-<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center transition-colors duration-300 group-hover:bg-gradient-to-br group-hover:from-[#f7941d] group-hover:to-[#e2231a]">
-<span class="material-symbols-outlined text-primary transition-colors duration-300 group-hover:text-white" data-icon="database">database</span>
+<p class="font-body-md text-on-surface-variant mb-md">Escritórios precisam responder rápido, qualificar leads e manter organização no atendimento. A YATECH estrutura o fluxo inicial de contato e centraliza informações em um processo claro e rastreável.</p>
+<p class="font-label-caps text-label-caps uppercase text-on-surface-variant mb-xs">O que entregamos</p>
+<ul class="space-y-xs mb-md text-on-surface">
+<li class="flex items-start gap-xs"><span class="material-symbols-outlined scale-75 text-primary mt-[2px]">check_circle</span><span>Triagem automática de novos contatos.</span></li>
+<li class="flex items-start gap-xs"><span class="material-symbols-outlined scale-75 text-primary mt-[2px]">check_circle</span><span>Classificação por área de atuação.</span></li>
+<li class="flex items-start gap-xs"><span class="material-symbols-outlined scale-75 text-primary mt-[2px]">check_circle</span><span>Coleta de dados e documentos iniciais.</span></li>
+<li class="flex items-start gap-xs"><span class="material-symbols-outlined scale-75 text-primary mt-[2px]">check_circle</span><span>Organização de status e retornos.</span></li>
+<li class="flex items-start gap-xs"><span class="material-symbols-outlined scale-75 text-primary mt-[2px]">check_circle</span><span>Histórico centralizado no CRM.</span></li>
+</ul>
+<div class="mt-auto pt-md border-t border-surface-container-low">
+<p class="text-on-surface-variant mb-md"><span class="font-label-caps text-label-caps uppercase text-primary">Resultado esperado:</span> Mais agilidade no atendimento, menos perda de oportunidades e mais controle sobre os casos.</p>
+<a href="https://wa.me/5511978322152?text=Quero%20profissionalizar%20o%20atendimento%20do%20meu%20escrit%C3%B3rio." target="_blank" rel="noopener noreferrer" class="inline-block w-full text-center bg-surface-container-lowest text-on-surface px-lg py-sm rounded-sm font-label-caps text-label-caps hover:opacity-90 active:scale-95 transition-all uppercase tracking-widest">Quero profissionalizar o atendimento do meu escritório.</a>
 </div>
 </div>
-<h3 class="font-label-caps text-label-caps uppercase mb-sm text-on-surface">ERP &amp; CRM Sob Medida</h3>
-<p class="font-body-md text-on-surface-variant mb-md">Gestão completa do seu negócio em uma só plataforma: processos, vendas, financeiro e relacionamento com clientes.</p>
-<div class="mt-auto pt-md border-t border-surface-container-low flex items-center justify-between">
-<span class="font-mono-data text-mono-data text-primary">Resultado</span>
-<span class="font-mono-data text-mono-data text-on-surface font-semibold text-right">Controle total de estoque e vendas na palma da mão.</span>
+
+<div class="bg-surface border border-surface-container-highest p-lg group hover:border-primary/50 transition-all duration-300 flex flex-col rounded-2xl">
+<div class="flex items-center gap-sm mb-md">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="apartment">apartment</span>
+</div>
+<div>
+<span class="font-mono-data text-mono-data text-primary block">Imobiliárias</span>
+<h3 class="font-label-caps text-label-caps uppercase text-on-surface">Captação e visitas automatizadas</h3>
 </div>
 </div>
-<!-- Card 4 -->
-<div class="bg-surface border border-surface-container-highest p-md group hover:border-primary/50 hover:-translate-y-1 transition-all duration-300 flex flex-col rounded-2xl">
-<div class="mb-md">
-<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center transition-colors duration-300 group-hover:bg-gradient-to-br group-hover:from-[#f7941d] group-hover:to-[#e2231a]">
-<span class="material-symbols-outlined text-primary transition-colors duration-300 group-hover:text-white" data-icon="hub">hub</span>
+<p class="font-body-md text-on-surface-variant mb-md">Imobiliárias perdem leads por demora no retorno e desorganização no agendamento. A YATECH transforma o WhatsApp em um funil comercial que qualifica o interessado e direciona para a visita certa.</p>
+<p class="font-label-caps text-label-caps uppercase text-on-surface-variant mb-xs">O que entregamos</p>
+<ul class="space-y-xs mb-md text-on-surface">
+<li class="flex items-start gap-xs"><span class="material-symbols-outlined scale-75 text-primary mt-[2px]">check_circle</span><span>Captação de leads por WhatsApp.</span></li>
+<li class="flex items-start gap-xs"><span class="material-symbols-outlined scale-75 text-primary mt-[2px]">check_circle</span><span>Qualificação por perfil, faixa de valor e região.</span></li>
+<li class="flex items-start gap-xs"><span class="material-symbols-outlined scale-75 text-primary mt-[2px]">check_circle</span><span>Envio automático de imóveis compatíveis.</span></li>
+<li class="flex items-start gap-xs"><span class="material-symbols-outlined scale-75 text-primary mt-[2px]">check_circle</span><span>Agendamento de visitas.</span></li>
+<li class="flex items-start gap-xs"><span class="material-symbols-outlined scale-75 text-primary mt-[2px]">check_circle</span><span>Follow-up para leads sem resposta.</span></li>
+</ul>
+<div class="mt-auto pt-md border-t border-surface-container-low">
+<p class="text-on-surface-variant mb-md"><span class="font-label-caps text-label-caps uppercase text-primary">Resultado esperado:</span> Mais visitas marcadas, menos lead frio e maior conversão comercial.</p>
+<a href="https://wa.me/5511978322152?text=Quero%20aumentar%20a%20convers%C3%A3o%20da%20minha%20imobili%C3%A1ria." target="_blank" rel="noopener noreferrer" class="inline-block w-full text-center bg-surface-container-lowest text-on-surface px-lg py-sm rounded-sm font-label-caps text-label-caps hover:opacity-90 active:scale-95 transition-all uppercase tracking-widest">Quero aumentar a conversão da minha imobiliária.</a>
 </div>
 </div>
-<h3 class="font-label-caps text-label-caps uppercase mb-sm text-on-surface">Integrações Personalizadas</h3>
-<p class="font-body-md text-on-surface-variant mb-md">Conectamos as ferramentas que você já usa em um ecossistema fluido e sem gaps.</p>
-<div class="mt-auto pt-md border-t border-surface-container-low flex items-center justify-between">
-<span class="font-mono-data text-mono-data text-primary">Resultado</span>
-<span class="font-mono-data text-mono-data text-on-surface font-semibold text-right">Seus softwares atuais conversando entre si sem erros.</span>
+
+<div class="bg-surface border border-surface-container-highest p-lg group hover:border-primary/50 transition-all duration-300 flex flex-col rounded-2xl">
+<div class="flex items-center gap-sm mb-md">
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center flex-shrink-0">
+<span class="material-symbols-outlined text-primary" data-icon="construction">construction</span>
+</div>
+<div>
+<span class="font-mono-data text-mono-data text-primary block">Construtoras</span>
+<h3 class="font-label-caps text-label-caps uppercase text-on-surface">Comunicação e pós-venda integrados</h3>
 </div>
 </div>
+<p class="font-body-md text-on-surface-variant mb-md">Construtoras precisam manter clientes informados, organizar demandas e reduzir ruídos entre setores. A YATECH cria uma camada de automação que conecta atendimento, obra e pós-venda.</p>
+<p class="font-label-caps text-label-caps uppercase text-on-surface-variant mb-xs">O que entregamos</p>
+<ul class="space-y-xs mb-md text-on-surface">
+<li class="flex items-start gap-xs"><span class="material-symbols-outlined scale-75 text-primary mt-[2px]">check_circle</span><span>Comunicação automatizada com clientes.</span></li>
+<li class="flex items-start gap-xs"><span class="material-symbols-outlined scale-75 text-primary mt-[2px]">check_circle</span><span>Atualizações de andamento.</span></li>
+<li class="flex items-start gap-xs"><span class="material-symbols-outlined scale-75 text-primary mt-[2px]">check_circle</span><span>Central de chamados e solicitações.</span></li>
+<li class="flex items-start gap-xs"><span class="material-symbols-outlined scale-75 text-primary mt-[2px]">check_circle</span><span>Envio de documentos e comunicados.</span></li>
+<li class="flex items-start gap-xs"><span class="material-symbols-outlined scale-75 text-primary mt-[2px]">check_circle</span><span>Organização de pendências no sistema interno.</span></li>
+</ul>
+<div class="mt-auto pt-md border-t border-surface-container-low">
+<p class="text-on-surface-variant mb-md"><span class="font-label-caps text-label-caps uppercase text-primary">Resultado esperado:</span> Menos retrabalho, mais previsibilidade e melhor experiência para o cliente.</p>
+<a href="https://wa.me/5511978322152?text=Quero%20organizar%20a%20comunica%C3%A7%C3%A3o%20da%20minha%20construtora." target="_blank" rel="noopener noreferrer" class="inline-block w-full text-center bg-surface-container-lowest text-on-surface px-lg py-sm rounded-sm font-label-caps text-label-caps hover:opacity-90 active:scale-95 transition-all uppercase tracking-widest">Quero organizar a comunicação da minha construtora.</a>
+</div>
+</div>
+
 </div>
 </div>
 </section>
