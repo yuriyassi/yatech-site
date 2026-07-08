@@ -358,6 +358,7 @@ Clique no seu setor e veja a solução completa
 </div>
 
 </div>
+<div id="setor-panel-desktop" class="hidden mt-md bg-surface border border-surface-container-highest rounded-2xl p-lg w-full"></div>
 </div>
 </section>
 <script>
@@ -397,6 +398,8 @@ waLink: 'https://wa.me/5511978322152?text=Quero%20organizar%20a%20comunica%C3%A7
 }
 };
 var items = document.querySelectorAll('.setor-item');
+var desktopPanel = document.getElementById('setor-panel-desktop');
+var isDesktop = function(){ return window.matchMedia('(min-width: 1024px)').matches; };
 function setActive(btn, isActive){
 var icon = btn.querySelector('.setor-icon');
 var iconSymbol = btn.querySelector('.setor-icon-symbol');
@@ -421,12 +424,12 @@ chevron.classList.remove('rotate-180');
 btn.setAttribute('aria-expanded', 'false');
 }
 }
-function renderPanel(panel, key){
+function buildHtml(key){
 var d = setoresData[key];
 var itemsHtml = d.entregamos.map(function(i){
 return '<li class="flex items-start gap-xs"><span class="material-symbols-outlined scale-75 text-primary mt-[2px]">check_circle</span><span>' + i + '</span></li>';
 }).join('');
-panel.innerHTML = '<h3 class="font-label-caps text-label-caps uppercase text-on-surface mb-sm">' + d.titulo + '</h3>' +
+return '<h3 class="font-label-caps text-label-caps uppercase text-on-surface mb-sm">' + d.titulo + '</h3>' +
 '<p class="text-on-surface-variant mb-md">' + d.dor + '</p>' +
 '<p class="font-label-caps text-label-caps uppercase text-on-surface-variant mb-xs">O que entregamos</p>' +
 '<ul class="space-y-xs mb-md text-on-surface">' + itemsHtml + '</ul>' +
@@ -435,18 +438,25 @@ panel.innerHTML = '<h3 class="font-label-caps text-label-caps uppercase text-on-
 }
 items.forEach(function(item){
 var btn = item.querySelector('.setor-btn');
-var panel = item.querySelector('.setor-panel');
+var inlinePanel = item.querySelector('.setor-panel');
 var key = btn.getAttribute('data-setor');
 btn.addEventListener('click', function(){
-var isOpen = !panel.classList.contains('hidden');
+var wasOpen = btn.getAttribute('aria-expanded') === 'true';
 items.forEach(function(other){
 setActive(other.querySelector('.setor-btn'), false);
 other.querySelector('.setor-panel').classList.add('hidden');
 });
-if(!isOpen){
+desktopPanel.classList.add('hidden');
+if(wasOpen){
+return;
+}
 setActive(btn, true);
-renderPanel(panel, key);
-panel.classList.remove('hidden');
+if(isDesktop()){
+desktopPanel.innerHTML = buildHtml(key);
+desktopPanel.classList.remove('hidden');
+} else {
+inlinePanel.innerHTML = buildHtml(key);
+inlinePanel.classList.remove('hidden');
 }
 });
 });
