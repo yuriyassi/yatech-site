@@ -301,7 +301,7 @@
 </div>
 </section>
 <!-- Section 3: Serviços -->
-<section class="py-xl bg-[#f4efe4] overflow-hidden" id="servicos">
+<section class="py-lg bg-[#f4efe4] overflow-hidden" id="servicos">
 <div class="max-w-container-max mx-auto px-gutter">
 <div class="mb-lg">
 <span class="font-label-caps text-label-caps uppercase text-surface-container-highest tracking-widest block mb-xs">Nossas Especialidades</span>
@@ -311,42 +311,53 @@
 <span class="material-symbols-outlined scale-75 text-primary animate-bounce-slow">touch_app</span>
 Clique no seu setor e veja a solução completa
 </p>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-md mb-lg">
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-md items-start">
 
-<button type="button" data-setor="clinicas" aria-expanded="false" aria-controls="setor-panel" class="setor-btn group flex flex-col items-center text-center gap-sm px-md py-lg border-2 border-surface-container-highest/25 rounded-2xl bg-white/30 hover:border-primary/60 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 cursor-pointer">
-<div class="setor-icon w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center transition-all duration-300">
-<span class="material-symbols-outlined setor-icon-symbol text-primary text-2xl transition-colors duration-300" data-icon="medical_services">medical_services</span>
+<div class="setor-item">
+<button type="button" data-setor="clinicas" aria-expanded="false" aria-controls="setor-panel-clinicas" class="setor-btn w-full group flex flex-col items-center text-center gap-sm px-md py-md border-2 border-surface-container-highest/25 rounded-2xl bg-white/30 hover:border-primary/60 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 cursor-pointer">
+<div class="setor-icon w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center transition-all duration-300">
+<span class="material-symbols-outlined setor-icon-symbol text-primary text-3xl transition-colors duration-300" data-icon="medical_services">medical_services</span>
 </div>
 <span class="font-mono-data text-mono-data text-surface-container-lowest">Clínicas e Consultórios</span>
 <span class="material-symbols-outlined setor-chevron text-surface-container-highest scale-75 transition-transform duration-300" data-icon="expand_more">expand_more</span>
 </button>
+<div id="setor-panel-clinicas" class="setor-panel hidden mt-sm bg-surface border border-surface-container-highest rounded-2xl p-lg w-full"></div>
+</div>
 
-<button type="button" data-setor="advocacia" aria-expanded="false" aria-controls="setor-panel" class="setor-btn group flex flex-col items-center text-center gap-sm px-md py-lg border-2 border-surface-container-highest/25 rounded-2xl bg-white/30 hover:border-primary/60 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 cursor-pointer">
-<div class="setor-icon w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center transition-all duration-300">
-<span class="material-symbols-outlined setor-icon-symbol text-primary text-2xl transition-colors duration-300" data-icon="gavel">gavel</span>
+<div class="setor-item">
+<button type="button" data-setor="advocacia" aria-expanded="false" aria-controls="setor-panel-advocacia" class="setor-btn w-full group flex flex-col items-center text-center gap-sm px-md py-md border-2 border-surface-container-highest/25 rounded-2xl bg-white/30 hover:border-primary/60 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 cursor-pointer">
+<div class="setor-icon w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center transition-all duration-300">
+<span class="material-symbols-outlined setor-icon-symbol text-primary text-3xl transition-colors duration-300" data-icon="gavel">gavel</span>
 </div>
 <span class="font-mono-data text-mono-data text-surface-container-lowest">Escritórios de Advocacia</span>
 <span class="material-symbols-outlined setor-chevron text-surface-container-highest scale-75 transition-transform duration-300" data-icon="expand_more">expand_more</span>
 </button>
+<div id="setor-panel-advocacia" class="setor-panel hidden mt-sm bg-surface border border-surface-container-highest rounded-2xl p-lg w-full"></div>
+</div>
 
-<button type="button" data-setor="imobiliarias" aria-expanded="false" aria-controls="setor-panel" class="setor-btn group flex flex-col items-center text-center gap-sm px-md py-lg border-2 border-surface-container-highest/25 rounded-2xl bg-white/30 hover:border-primary/60 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 cursor-pointer">
-<div class="setor-icon w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center transition-all duration-300">
-<span class="material-symbols-outlined setor-icon-symbol text-primary text-2xl transition-colors duration-300" data-icon="apartment">apartment</span>
+<div class="setor-item">
+<button type="button" data-setor="imobiliarias" aria-expanded="false" aria-controls="setor-panel-imobiliarias" class="setor-btn w-full group flex flex-col items-center text-center gap-sm px-md py-md border-2 border-surface-container-highest/25 rounded-2xl bg-white/30 hover:border-primary/60 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 cursor-pointer">
+<div class="setor-icon w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center transition-all duration-300">
+<span class="material-symbols-outlined setor-icon-symbol text-primary text-3xl transition-colors duration-300" data-icon="apartment">apartment</span>
 </div>
 <span class="font-mono-data text-mono-data text-surface-container-lowest">Imobiliárias</span>
 <span class="material-symbols-outlined setor-chevron text-surface-container-highest scale-75 transition-transform duration-300" data-icon="expand_more">expand_more</span>
 </button>
+<div id="setor-panel-imobiliarias" class="setor-panel hidden mt-sm bg-surface border border-surface-container-highest rounded-2xl p-lg w-full"></div>
+</div>
 
-<button type="button" data-setor="construtoras" aria-expanded="false" aria-controls="setor-panel" class="setor-btn group flex flex-col items-center text-center gap-sm px-md py-lg border-2 border-surface-container-highest/25 rounded-2xl bg-white/30 hover:border-primary/60 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 cursor-pointer">
-<div class="setor-icon w-14 h-14 rounded-xl bg-primary/10 flex items-center justify-center transition-all duration-300">
-<span class="material-symbols-outlined setor-icon-symbol text-primary text-2xl transition-colors duration-300" data-icon="construction">construction</span>
+<div class="setor-item">
+<button type="button" data-setor="construtoras" aria-expanded="false" aria-controls="setor-panel-construtoras" class="setor-btn w-full group flex flex-col items-center text-center gap-sm px-md py-md border-2 border-surface-container-highest/25 rounded-2xl bg-white/30 hover:border-primary/60 hover:-translate-y-1 hover:shadow-lg transition-all duration-300 cursor-pointer">
+<div class="setor-icon w-16 h-16 rounded-xl bg-primary/10 flex items-center justify-center transition-all duration-300">
+<span class="material-symbols-outlined setor-icon-symbol text-primary text-3xl transition-colors duration-300" data-icon="construction">construction</span>
 </div>
 <span class="font-mono-data text-mono-data text-surface-container-lowest">Construtoras</span>
 <span class="material-symbols-outlined setor-chevron text-surface-container-highest scale-75 transition-transform duration-300" data-icon="expand_more">expand_more</span>
 </button>
+<div id="setor-panel-construtoras" class="setor-panel hidden mt-sm bg-surface border border-surface-container-highest rounded-2xl p-lg w-full"></div>
+</div>
 
 </div>
-<div id="setor-panel" class="hidden bg-surface border border-surface-container-highest rounded-2xl p-lg max-w-3xl mx-auto"></div>
 </div>
 </section>
 <script>
@@ -385,9 +396,7 @@ cta: 'Quero organizar a comunicação da minha construtora.',
 waLink: 'https://wa.me/5511978322152?text=Quero%20organizar%20a%20comunica%C3%A7%C3%A3o%20da%20minha%20construtora.'
 }
 };
-var buttons = document.querySelectorAll('.setor-btn');
-var panel = document.getElementById('setor-panel');
-var activeKey = null;
+var items = document.querySelectorAll('.setor-item');
 function setActive(btn, isActive){
 var icon = btn.querySelector('.setor-icon');
 var iconSymbol = btn.querySelector('.setor-icon-symbol');
@@ -412,46 +421,45 @@ chevron.classList.remove('rotate-180');
 btn.setAttribute('aria-expanded', 'false');
 }
 }
-function renderPanel(key){
+function renderPanel(panel, key){
 var d = setoresData[key];
-var items = d.entregamos.map(function(i){
+var itemsHtml = d.entregamos.map(function(i){
 return '<li class="flex items-start gap-xs"><span class="material-symbols-outlined scale-75 text-primary mt-[2px]">check_circle</span><span>' + i + '</span></li>';
 }).join('');
 panel.innerHTML = '<h3 class="font-label-caps text-label-caps uppercase text-on-surface mb-sm">' + d.titulo + '</h3>' +
 '<p class="text-on-surface-variant mb-md">' + d.dor + '</p>' +
 '<p class="font-label-caps text-label-caps uppercase text-on-surface-variant mb-xs">O que entregamos</p>' +
-'<ul class="space-y-xs mb-md text-on-surface">' + items + '</ul>' +
+'<ul class="space-y-xs mb-md text-on-surface">' + itemsHtml + '</ul>' +
 '<p class="text-on-surface-variant mb-md"><span class="font-label-caps text-label-caps uppercase text-primary">Resultado esperado:</span> ' + d.resultado + '</p>' +
 '<a href="' + d.waLink + '" target="_blank" rel="noopener noreferrer" class="inline-block bg-surface-container-lowest text-on-surface px-lg py-sm rounded-sm font-label-caps text-label-caps hover:opacity-90 active:scale-95 transition-all uppercase tracking-widest">' + d.cta + '</a>';
 }
-buttons.forEach(function(btn){
-btn.addEventListener('click', function(){
+items.forEach(function(item){
+var btn = item.querySelector('.setor-btn');
+var panel = item.querySelector('.setor-panel');
 var key = btn.getAttribute('data-setor');
-buttons.forEach(function(b){ setActive(b, false); });
-if(activeKey === key){
-activeKey = null;
-panel.classList.add('hidden');
-return;
-}
-activeKey = key;
+btn.addEventListener('click', function(){
+var isOpen = !panel.classList.contains('hidden');
+items.forEach(function(other){
+setActive(other.querySelector('.setor-btn'), false);
+other.querySelector('.setor-panel').classList.add('hidden');
+});
+if(!isOpen){
 setActive(btn, true);
-renderPanel(key);
+renderPanel(panel, key);
 panel.classList.remove('hidden');
+}
 });
 });
 })();
 </script>
 <!-- Section 3: Prova / Cases -->
-<section id="cases" class="py-xl bg-[#f4efe4] text-surface-container-lowest">
+<section id="cases" class="py-lg bg-[#f4efe4] text-surface-container-lowest">
 <div class="max-w-container-max mx-auto px-gutter">
 <div class="flex flex-col md:flex-row justify-between items-end mb-lg gap-md">
 <div class="max-w-xl">
 <span class="font-mono-data text-label-caps text-surface-container-highest uppercase tracking-widest mb-sm inline-block">Nossos Resultados</span>
 <h2 class="font-display-md text-display-md text-surface-container-lowest uppercase leading-tight">Projetos em Escala Real</h2>
 </div>
-<p class="font-body-md text-body-md text-surface-container-highest max-w-xs">
-                        Não trabalhamos com protótipos. Entregamos infraestrutura robusta para operações que não podem parar.
-                    </p>
 </div>
 <div class="grid grid-cols-1 md:grid-cols-2 gap-md">
 <!-- Card 1: Projeto Cláudio -->
@@ -500,7 +508,7 @@ panel.classList.remove('hidden');
 </div>
 </section>
 <!-- Section 4: Como Funciona -->
-<section class="py-xl bg-[#f4efe4]" id="como-funciona">
+<section class="py-lg bg-[#f4efe4]" id="como-funciona">
 <div class="max-w-container-max mx-auto px-gutter">
 <div class="mb-lg">
 <span class="font-label-caps text-label-caps uppercase text-surface-container-highest tracking-widest block mb-xs">Metodologia YATECH</span>
