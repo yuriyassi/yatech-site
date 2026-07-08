@@ -441,15 +441,96 @@
 <!-- Section 4: Como Funciona -->
 <section class="py-xl bg-[#f4efe4]" id="como-funciona">
 <div class="max-w-container-max mx-auto px-gutter">
-<div class="flex flex-col md:flex-row md:items-end justify-between mb-lg gap-md">
-<div class="max-w-2xl">
+<div class="mb-lg">
 <span class="font-label-caps text-label-caps uppercase text-surface-container-highest tracking-widest block mb-xs">Metodologia YATECH</span>
 <h2 class="font-display-md text-display-md text-surface-container-lowest uppercase">A Jornada para a Eficiência</h2>
 </div>
-<div class="font-body-md text-surface-container-highest max-w-sm">
-                        Um processo estruturado para garantir que cada linha de código entregue valor real ao seu negócio.
-                    </div>
+<div class="hidden md:block w-full mb-xl">
+<div style="background:#141210; border-radius:12px; overflow:hidden; border:1px solid rgba(255,255,255,0.08);">
+<div style="display:flex; align-items:center; gap:6px; padding:10px 14px; background:#1c1a17; border-bottom:1px solid rgba(255,255,255,0.06);">
+<span style="width:10px;height:10px;border-radius:50%;background:#e2231a;"></span>
+<span style="width:10px;height:10px;border-radius:50%;background:#f7941d;"></span>
+<span style="width:10px;height:10px;border-radius:50%;background:#4a4a45;"></span>
+<span style="margin-left:8px; font-size:12px; color:#8a8a82; font-family: monospace;">yatech-agendamento — deploy</span>
 </div>
+<div style="padding:18px 20px; font-family: monospace; font-size:13px; line-height:1.7; min-height:190px;">
+<div id="yatech-terminal-lines"></div>
+<div style="margin-top:2px;"><span id="yatech-cursor" style="color:#f7941d; animation: yatech-blink 1s step-end infinite;">▍</span></div>
+</div>
+<div style="height:1px; background:rgba(255,255,255,0.06);"></div>
+<div style="padding:24px 20px 26px;">
+<svg viewBox="0 0 600 20" style="width:100%; height:20px; display:block; overflow:visible;">
+<line x1="30" y1="10" x2="570" y2="10" stroke="rgba(255,255,255,0.12)" stroke-width="2"/>
+<circle r="4" fill="#f7941d">
+<animateMotion dur="3.2s" repeatCount="indefinite" path="M30,10 L570,10"/>
+</circle>
+</svg>
+<div style="display:flex; justify-content:space-between; margin-top:10px;">
+<div style="display:flex; flex-direction:column; align-items:center; gap:6px; width:60px;">
+<div style="width:32px;height:32px;border-radius:8px; background:#1c1a17; border:1px solid rgba(255,255,255,0.14); display:flex; align-items:center; justify-content:center; color:#f7941d;"><span class="material-symbols-outlined" style="font-size:16px;" data-icon="chat">chat</span></div>
+<span style="font-size:10px; color:#8a8a82; font-family: monospace; text-align:center;">WhatsApp</span>
+</div>
+<div style="display:flex; flex-direction:column; align-items:center; gap:6px; width:60px;">
+<div style="width:32px;height:32px;border-radius:8px; background:#1c1a17; border:1px solid rgba(255,255,255,0.14); display:flex; align-items:center; justify-content:center; color:#f7941d;"><span class="material-symbols-outlined" style="font-size:16px;" data-icon="bolt">bolt</span></div>
+<span style="font-size:10px; color:#8a8a82; font-family: monospace; text-align:center;">Automação</span>
+</div>
+<div style="display:flex; flex-direction:column; align-items:center; gap:6px; width:60px;">
+<div style="width:32px;height:32px;border-radius:8px; background:#1c1a17; border:1px solid rgba(255,255,255,0.14); display:flex; align-items:center; justify-content:center; color:#f7941d;"><span class="material-symbols-outlined" style="font-size:16px;" data-icon="calendar_month">calendar_month</span></div>
+<span style="font-size:10px; color:#8a8a82; font-family: monospace; text-align:center;">Agendamento</span>
+</div>
+<div style="display:flex; flex-direction:column; align-items:center; gap:6px; width:60px;">
+<div style="width:32px;height:32px;border-radius:8px; background:#1c1a17; border:1px solid rgba(255,255,255,0.14); display:flex; align-items:center; justify-content:center; color:#f7941d;"><span class="material-symbols-outlined" style="font-size:16px;" data-icon="database">database</span></div>
+<span style="font-size:10px; color:#8a8a82; font-family: monospace; text-align:center;">ERP/CRM</span>
+</div>
+<div style="display:flex; flex-direction:column; align-items:center; gap:6px; width:60px;">
+<div style="width:32px;height:32px;border-radius:8px; background:#1c1a17; border:1px solid rgba(255,255,255,0.14); display:flex; align-items:center; justify-content:center; color:#f7941d;"><span class="material-symbols-outlined" style="font-size:16px;" data-icon="bar_chart">bar_chart</span></div>
+<span style="font-size:10px; color:#8a8a82; font-family: monospace; text-align:center;">Resultado</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<style>
+@keyframes yatech-blink { 50% { opacity: 0; } }
+.yatech-term-line { opacity: 0; animation: yatech-fadeIn 0.25s ease forwards; }
+@keyframes yatech-fadeIn { to { opacity: 1; } }
+</style>
+<script>
+(function(){
+var yatechLines = [
+{t:'$ deploy yatech-agendamento', c:'#f7941d'},
+{t:'', c:''},
+{t:'✓ Webhook WhatsApp conectado', c:'#8fd4a8'},
+{t:'✓ Trigger: nova_mensagem', c:'#8fd4a8'},
+{t:'✓ Roteando para automação...', c:'#8fd4a8'},
+{t:'', c:''},
+{t:'def confirmar_agendamento(cliente, horario):', c:'#d8d5cc'},
+{t:'    calendar.criar_evento(cliente, horario)', c:'#a8a59c'},
+{t:'    whatsapp.enviar_confirmacao(cliente)', c:'#a8a59c'},
+{t:'    crm.atualizar_status(cliente, "confirmado")', c:'#a8a59c'},
+{t:'', c:''},
+{t:'✓ Deploy concluído — sistema no ar', c:'#f7941d'}
+];
+var wrap = document.getElementById('yatech-terminal-lines');
+if(!wrap) return;
+var idx = 0;
+function addLine(){
+if(idx >= yatechLines.length){
+setTimeout(function(){ wrap.innerHTML=''; idx=0; addLine(); }, 2400);
+return;
+}
+var l = yatechLines[idx];
+var div = document.createElement('div');
+div.className = 'yatech-term-line';
+div.textContent = l.t.length ? l.t : ' ';
+div.style.color = l.c || '#d8d5cc';
+wrap.appendChild(div);
+idx++;
+setTimeout(addLine, l.t === '' ? 120 : 300);
+}
+addLine();
+})();
+</script>
 <!-- Steps Layout -->
 <div class="relative grid grid-cols-1 md:grid-cols-4 gap-md">
 <!-- Progress Line (Desktop) -->
