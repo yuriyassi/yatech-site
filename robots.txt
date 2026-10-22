@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
+Disallow: /propostas/
 
 Sitemap: https://yatech.com.br/sitemap.xml

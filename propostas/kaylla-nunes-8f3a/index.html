@@ -1,0 +1,838 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Proposta comercial · YATECH Automação">
+<meta property="og:description" content="Operação de ofertas para grupos de WhatsApp · piloto de 60 dias">
+<meta property="og:url" content="https://yatech.com.br/propostas/kaylla-nunes-8f3a/">
+<meta property="og:image" content="https://yatech.com.br/og-cover.png">
+<style>:root{padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}body{margin:0}img{max-width:100%}[hidden]{display:none!important}</style>
+<title>Proposta Operação de Ofertas</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;700&display=swap">
+<style>
+/* Layout: documento de proposta em coluna única; no desktop, rótulo da seção à esquerda e conteúdo à direita; capa com exemplo de publicação no grupo */
+/* Tema único em bege (off-white da marca), escolhido para a proposta e o PDF */
+:root {
+  --bg: #F4EFE4;
+  --surface: #EAE2D3;
+  --raised: #DED4C2;
+  --line: #DCD2C0;
+  --fg: #161514;
+  --fg-2: #4A453E;
+  --muted: #625C53;
+  --accent: #F8A82E;
+  --accent-text: #9A5300;
+  --accent-ink: #161514;
+  --ok: #23794C;
+  --bar: #B8660F;
+  --bar-soft: #DDB77E;
+  --link: #1F5FA8;
+  --grad: linear-gradient(135deg, #F8A82E 0%, #F0863A 50%, #CE3333 100%);
+  --pend-bg: #FBE3B8;
+  --pend-line: #B8660F;
+  --font-display: "Space Grotesk", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --r-card: 12px;
+  --r-btn: 10px;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+
+body {
+  background: var(--bg);
+  color: var(--fg);
+  font: 400 16px/1.6 var(--font-body);
+  -webkit-font-smoothing: antialiased;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px);
+  z-index: 10; background: var(--bg);
+}
+
+.wrap {
+  max-width: 1040px; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+
+h1, h2, h3 { font-family: var(--font-display); font-weight: 700; margin: 0; text-wrap: balance; line-height: 1.15; }
+h1 { font-size: clamp(30px, 5.2vw, 44px); letter-spacing: -0.01em; }
+h2 { font-size: 22px; }
+h3 { font-size: 18px; font-weight: 500; }
+p { margin: 0; }
+.overline {
+  font: 600 11px/1.4 var(--font-body); letter-spacing: 0.16em; text-transform: uppercase; color: var(--muted);
+}
+.mono { font-family: var(--font-mono); }
+.muted { color: var(--muted); }
+.fg2 { color: var(--fg-2); }
+
+a { color: var(--link); }
+a:focus-visible, button:focus-visible, [tabindex]:focus-visible {
+  outline: 2px solid var(--accent-text); outline-offset: 3px; border-radius: 6px;
+}
+
+/* Barra superior */
+.topbar {
+  position: sticky; top: env(safe-area-inset-top, 0px); z-index: 9;
+  background: var(--bg); border-bottom: 1px solid var(--line);
+}
+.topbar-in { display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 12px; }
+.topbar img { height: 30px; width: auto; display: block; }
+.topbar-actions { display: flex; gap: 8px; align-items: center; }
+
+/* Botões */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center; gap: 8px;
+  font: 600 14px/1 var(--font-body); text-decoration: none; cursor: pointer;
+  border-radius: var(--r-btn); padding: 12px 16px; border: 1px solid transparent;
+  transition: transform 140ms ease, background-color 140ms ease, border-color 140ms ease;
+  white-space: nowrap;
+}
+.btn-primary { background: var(--grad); color: var(--accent-ink); }
+.btn-primary:hover { transform: translateY(-1px); }
+.btn-ghost { background: transparent; color: var(--fg); border-color: var(--raised); }
+.btn-ghost:hover { border-color: var(--muted); }
+.btn[aria-disabled="true"] { opacity: .55; pointer-events: none; }
+
+/* Rascunho */
+.draft {
+  border: 1px dashed var(--pend-line); background: var(--pend-bg); color: var(--fg);
+  border-radius: var(--r-card); padding: 12px 16px; font-size: 14px; margin-top: 16px;
+}
+.pend {
+  background: var(--pend-bg); outline: 1px dashed var(--pend-line); outline-offset: 1px;
+  border-radius: 4px; padding: 0 4px;
+}
+
+/* Capa */
+.hero {
+  display: grid; grid-template-columns: minmax(0, 1.25fr) minmax(0, 0.9fr); gap: 48px; align-items: center;
+  padding-block: 48px 56px;
+}
+.hero-text { display: grid; gap: 20px; min-width: 0; }
+.hero-lead { font-size: 18px; color: var(--fg-2); max-width: 34em; }
+.hero-meta {
+  display: grid; grid-template-columns: repeat(3, auto); justify-content: start; gap: 8px 32px;
+  padding-top: 8px; border-top: 1px solid var(--line);
+}
+.hero-meta div { display: grid; gap: 2px; padding-top: 12px; }
+.hero-meta dd { margin: 0; font-weight: 500; }
+.hero-meta dt { margin: 0; }
+.hero-cta { display: flex; flex-wrap: wrap; gap: 12px; }
+
+/* Exemplo de publicação */
+.chat {
+  background: var(--surface); border: 1px solid var(--line); border-radius: 16px; overflow: hidden; min-width: 0;
+}
+.chat-head { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--line); }
+.chat-avatar {
+  width: 36px; height: 36px; border-radius: 10px; background: var(--raised); flex: none;
+  display: grid; place-items: center; font: 700 14px var(--font-display); color: var(--fg-2);
+}
+.chat-head .t { font-weight: 600; font-size: 14px; line-height: 1.3; }
+.chat-head .s { font-size: 12px; color: var(--muted); }
+.chat-tag { margin-left: auto; font: 500 11px var(--font-mono); color: var(--muted); border: 1px solid var(--raised); border-radius: 999px; padding: 3px 8px; white-space: nowrap; }
+.chat-body { padding: 16px; display: grid; gap: 12px; }
+.bubble { background: var(--raised); border-radius: 4px 14px 14px 14px; padding: 8px; display: grid; gap: 8px; max-width: 320px; }
+.art {
+  position: relative; aspect-ratio: 4 / 3; max-width: 100%; border-radius: 10px; overflow: hidden;
+  background: #FFFDF8; display: grid; place-items: center;
+}
+.art .fold { position: absolute; left: 50%; width: 62%; height: 15%; border-radius: 6px; transform: translateX(-50%); }
+.art .f1 { top: 30%; background: #D9CBB2; }
+.art .f2 { top: 44%; background: #C9B796; width: 66%; }
+.art .f3 { top: 58%; background: #E6DCCB; width: 70%; box-shadow: 0 1px 0 #CBBFA9; }
+.art .badge {
+  position: absolute; top: 10px; right: 10px; background: var(--accent); color: var(--accent-ink);
+  font: 700 13px var(--font-display); padding: 4px 8px; border-radius: 999px;
+}
+.art .brand { position: absolute; left: 12px; bottom: 10px; font: 700 12px var(--font-display); color: #4A4136; letter-spacing: .04em; }
+.msg { padding: 0 6px 4px; display: grid; gap: 4px; font-size: 14px; line-height: 1.45; }
+.msg .hook { font-weight: 600; }
+.msg .offer s { color: var(--muted); }
+.msg .offer b { color: var(--fg); }
+.msg .link { color: var(--link); word-break: break-all; }
+.msg .foot { color: var(--muted); font-size: 13px; }
+.msg .time { justify-self: end; font: 400 11px var(--font-mono); color: var(--muted); }
+.chat-note { font-size: 13px; color: var(--muted); padding: 0 16px 16px; }
+
+/* Seções */
+.sec {
+  display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 32px;
+  padding-block: 48px; border-top: 1px solid var(--line);
+}
+.sec-label { display: grid; gap: 8px; align-content: start; }
+.sec-body { display: grid; gap: 24px; min-width: 0; }
+.sec-intro { color: var(--fg-2); max-width: 40em; }
+
+/* Fluxo */
+.flow { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; counter-reset: step; }
+.flow li {
+  position: relative; display: grid; gap: 8px; align-content: start;
+  padding: 16px; background: var(--surface); border-radius: var(--r-card); min-width: 0;
+}
+.flow li::before {
+  counter-increment: step; content: counter(step, decimal-leading-zero);
+  font: 500 12px var(--font-mono); color: var(--accent-text);
+}
+.flow li:not(:last-child)::after {
+  content: ""; position: absolute; top: 24px; right: -12px; width: 12px; height: 1px; background: var(--muted);
+}
+.flow h3 { font-size: 16px; font-weight: 700; overflow-wrap: anywhere; }
+.flow p { font-size: 14px; color: var(--fg-2); }
+
+/* Capacidade */
+.specs { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border: 1px solid var(--line); border-radius: var(--r-card); }
+.specs div { padding: 16px; display: grid; gap: 4px; min-width: 0; }
+.specs div + div { border-left: 1px solid var(--line); }
+.specs .n { font: 700 28px/1.1 var(--font-display); }
+.specs .t { font-size: 13px; color: var(--fg-2); }
+
+/* Listas de escopo */
+.cols { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 32px; }
+.cols > div { display: grid; gap: 12px; align-content: start; min-width: 0; }
+.checks { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.checks li { display: grid; grid-template-columns: 20px minmax(0, 1fr); gap: 10px; font-size: 15px; }
+.checks li::before { content: ""; width: 20px; height: 20px; margin-top: 2px; border-radius: 6px; background: var(--raised) center / 12px no-repeat; }
+.checks.yes li::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M2.5 6.2l2.3 2.3 4.7-5' fill='none' stroke='%239A5300' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E"); }
+.checks.no li { color: var(--fg-2); }
+.checks.no li::before { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12'%3E%3Cpath d='M3.5 6h5' fill='none' stroke='%23625C53' stroke-width='1.8' stroke-linecap='round'/%3E%3C/svg%3E"); }
+.checks.req { counter-reset: req; }
+.checks.req li::before {
+  counter-increment: req; content: counter(req); background: var(--raised);
+  font: 500 12px/20px var(--font-mono); text-align: center; color: var(--fg-2);
+}
+.note { font-size: 14px; color: var(--muted); }
+
+/* Cronograma (Gantt) */
+.gantt { display: grid; gap: 0; }
+.g-axis, .g-row { display: grid; grid-template-columns: 220px minmax(0, 1fr); gap: 16px; align-items: center; }
+.g-axis { padding-bottom: 8px; }
+.g-scale { position: relative; height: 18px; }
+.g-tick { position: absolute; top: 0; transform: translateX(-50%); font: 400 11px var(--font-mono); color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.g-tick:first-child { transform: none; }
+.g-tick:last-child { transform: translateX(-100%); }
+.g-row { padding-block: 12px; border-top: 1px solid var(--line); }
+.g-label { display: grid; gap: 2px; min-width: 0; }
+.g-label b { font-weight: 600; font-size: 15px; }
+.g-label span { font-size: 13px; color: var(--fg-2); }
+.g-track { position: relative; height: 28px; }
+.g-grid { position: absolute; top: -12px; bottom: -12px; width: 1px; background: var(--line); }
+.g-bar { position: absolute; top: 9px; height: 10px; border-radius: 3px; background: var(--bar); cursor: default; }
+.g-bar.soft { background: var(--bar-soft); }
+.g-dot { position: absolute; top: 14px; width: 12px; height: 12px; border-radius: 50%; background: var(--bar); box-shadow: 0 0 0 2px var(--bg); transform: translate(-50%, -50%); }
+.g-foot { font-size: 12px; color: var(--muted); padding-top: 12px; border-top: 1px solid var(--line); }
+
+/* Investimento */
+.price { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.price div { padding: 20px; border-radius: var(--r-card); background: var(--surface); display: grid; gap: 6px; align-content: start; min-width: 0; }
+.price div.total { background: transparent; border: 1px solid var(--raised); }
+.price .v { font: 700 34px/1.1 var(--font-display); }
+.price .v small { font: 500 16px var(--font-body); color: var(--fg-2); }
+.price .d { font-size: 13px; color: var(--fg-2); }
+
+.paychart { display: grid; gap: 10px; }
+.pc-title { font-weight: 600; font-size: 15px; }
+.pc-row { display: grid; grid-template-columns: 150px minmax(0, 1fr); gap: 16px; align-items: center; }
+.pc-label { font-size: 14px; color: var(--fg-2); }
+.pc-track { position: relative; height: 24px; display: flex; align-items: center; gap: 8px; }
+.pc-bar { height: 16px; background: var(--bar); border-radius: 0 4px 4px 0; flex: none; }
+.pc-val { font: 500 13px var(--font-mono); color: var(--fg); white-space: nowrap; font-variant-numeric: tabular-nums; }
+.pc-bar.soft { background: var(--bar-soft); }
+.pc-row.later .pc-label { color: var(--muted); }
+
+/* Depois do piloto */
+.after { display: grid; gap: 16px; padding: 20px; border: 1px solid var(--raised); border-radius: var(--r-card); }
+.after-head { display: grid; gap: 4px; }
+.after-head p { color: var(--fg-2); font-size: 15px; }
+.after .cols { gap: 24px; }
+.after h4 { margin: 0; font: 600 15px var(--font-body); }
+
+/* QR do pagamento */
+.qr-wrap { display: grid; grid-template-columns: auto minmax(0, 1fr); gap: 16px; align-items: center; }
+.qr { width: 116px; height: 116px; padding: 8px; background: #FFFFFF; border-radius: 8px; }
+.qr svg { width: 100%; height: 100%; display: block; }
+.link-text { font-size: 12px; color: var(--fg-2); word-break: break-all; }
+.pix-box { display: grid; gap: 8px; min-width: 0; }
+.pix-key { display: grid; gap: 0; margin: 0; background: var(--bg); border: 1px solid var(--raised); border-radius: 10px; }
+.pix-key div { display: grid; gap: 2px; padding: 10px 12px; }
+.pix-key div + div { border-top: 1px solid var(--line); }
+.pix-key dd { margin: 0; font-weight: 600; font-size: 15px; user-select: all; }
+
+/* Condições */
+.terms { display: grid; gap: 0; margin: 0; }
+.terms div { display: grid; grid-template-columns: 200px minmax(0, 1fr); gap: 16px; padding-block: 14px; border-top: 1px solid var(--line); }
+.terms div:first-child { border-top: 0; padding-top: 0; }
+.terms dt { font-weight: 600; font-size: 15px; }
+.terms dd { margin: 0; color: var(--fg-2); font-size: 15px; max-width: 40em; }
+
+/* Aceite */
+.accept { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 16px; }
+.step { padding: 20px; border-radius: var(--r-card); background: var(--surface); display: grid; gap: 14px; align-content: start; min-width: 0; }
+.step .overline { color: var(--accent-text); }
+.msgbox {
+  font: 400 13px/1.55 var(--font-mono); white-space: pre-wrap; word-break: break-word;
+  background: var(--bg); border: 1px solid var(--raised); border-radius: 10px; padding: 12px; color: var(--fg-2);
+}
+.actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.copy-status { font-size: 13px; color: var(--ok); min-height: 1.4em; }
+.num { font: 500 15px var(--font-mono); user-select: all; }
+
+/* Rodapé */
+footer { border-top: 1px solid var(--line); margin-top: 24px; }
+.foot-in { display: flex; flex-wrap: wrap; gap: 12px 32px; align-items: center; justify-content: space-between; padding-block: 24px 40px; font-size: 13px; color: var(--muted); }
+.foot-in img { height: 24px; width: auto; display: block; }
+
+/* Tooltip */
+.tip {
+  position: fixed; z-index: 20; pointer-events: none; background: var(--fg); color: var(--bg);
+  font: 500 12px/1.4 var(--font-body); padding: 6px 8px; border-radius: 6px; max-width: 240px;
+  transform: translate(-50%, calc(-100% - 10px));
+}
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+
+.logo-print { display: none !important; }
+
+/* Responsivo */
+@media (max-width: 860px) {
+  .hero { grid-template-columns: minmax(0, 1fr); gap: 32px; padding-block: 32px 40px; }
+  .sec { grid-template-columns: minmax(0, 1fr); gap: 16px; padding-block: 40px; }
+  .flow { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .flow li::after { display: none; }
+  .specs { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .specs div:nth-child(3) { border-left: 0; }
+  .specs div:nth-child(n+3) { border-top: 1px solid var(--line); }
+}
+@media (max-width: 600px) {
+  .topbar img { height: 24px; }
+  .topbar .btn { padding: 10px 12px; font-size: 13px; }
+  .hero-meta { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .flow { grid-template-columns: minmax(0, 1fr); }
+  .cols, .accept, .price { grid-template-columns: minmax(0, 1fr); }
+  .g-axis, .g-row { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .g-axis .g-spacer { display: none; }
+  .pc-row { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+  .terms div { grid-template-columns: minmax(0, 1fr); gap: 4px; }
+}
+
+/* Impressão / PDF */
+@media print {
+  @page { size: A4; margin: 0; }
+  html, body { background: var(--bg); -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { font-size: 12.5px; padding-block: 12mm; box-decoration-break: clone; -webkit-box-decoration-break: clone; }
+  main.wrap, .topbar-in, .foot-in { padding-left: 12mm; padding-right: 12mm; }
+  .topbar { position: static; border-bottom: 0; }
+  .topbar-in { padding-top: 0; }
+  .foot-in { padding-bottom: 0; }
+  .topbar-actions, .hero-cta, #btn-copy, .copy-status, .draft, body::before { display: none !important; }
+  .sec, .hero { padding-block: 20px; }
+  .hero { grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.9fr); gap: 24px; align-items: start; }
+  .hero-meta { grid-template-columns: repeat(3, auto); gap: 0 24px; }
+  h1 { font-size: 30px; }
+  .sec { grid-template-columns: 130px minmax(0, 1fr); gap: 20px; }
+  .flow { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+  .flow h3 { font-size: 13px; }
+  .specs { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+  .specs div:nth-child(n+2) { border-left: 1px solid var(--line); border-top: 0; }
+  .specs .n { font-size: 22px; }
+  .cols { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .price { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  .price .v { font-size: 26px; }
+  .accept { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .flow li, .price div, .step, .chat, .g-row, .g-axis, .terms div, .specs, .checks li, .pc-row { break-inside: avoid; }
+  .sec-label, h3, .pc-title { break-after: avoid; }
+  .qr-wrap { grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .qr { width: 96px; height: 96px; }
+  .msg .link { color: #2B6CB0; }
+  .btn-primary { background: #F8A82E; }
+}
+</style>
+
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap topbar-in">
+    <img class="logo-screen" src="yatech-logo-light.png" alt="YATECH Automação" width="548" height="139">
+    <img class="logo-print" src="yatech-logo-light.png" alt="YATECH Automação" width="548" height="139">
+    <div class="topbar-actions">
+      <a class="btn btn-primary" href="#aceite">Aceitar proposta</a>
+    </div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="draft" id="draft" hidden>Rascunho para revisão. Os campos destacados ainda precisam ser confirmados antes do envio.</div>
+
+  <section class="hero" id="capa" aria-labelledby="titulo">
+    <div class="hero-text">
+      <p class="overline" id="h-numero">Proposta comercial</p>
+      <h1 id="titulo">Operação de ofertas para os seus grupos de WhatsApp</h1>
+      <p class="hero-lead" id="h-lead"></p>
+      <dl class="hero-meta" id="h-meta"></dl>
+      <div class="hero-cta">
+        <a class="btn btn-primary" href="#aceite">Aceitar proposta</a>
+        <a class="btn btn-ghost" href="#investimento">Ver investimento</a>
+        <button class="btn btn-ghost" id="btn-pdf" type="button" hidden>Salvar em PDF</button>
+      </div>
+    </div>
+
+    <figure class="chat" aria-label="Exemplo ilustrativo de publicação no grupo" style="margin:0">
+      <div class="chat-head">
+        <div class="chat-avatar" id="c-avatar" aria-hidden="true">SM</div>
+        <div><div class="t" id="c-grupo"></div><div class="s">publicação automática</div></div>
+        <span class="chat-tag">exemplo</span>
+      </div>
+      <div class="chat-body">
+        <div class="bubble">
+          <div class="art" aria-hidden="true">
+            <span class="fold f1"></span><span class="fold f2"></span><span class="fold f3"></span>
+            <span class="badge">-37%</span>
+            <span class="brand" id="c-artbrand"></span>
+          </div>
+          <div class="msg">
+            <span class="hook">Achado do dia para o seu quarto</span>
+            <span>Jogo de cama queen 4 peças, 200 fios</span>
+            <span class="offer">De <s>R$ 159,90</s> por <b>R$ 99,90</b></span>
+            <span class="link">oferta.yatech.com.br/k7q2</span>
+            <span class="foot" id="c-rodape"></span>
+            <span class="time">09:12</span>
+          </div>
+        </div>
+      </div>
+      <figcaption class="chat-note">Produto e preço ilustrativos. Cada link leva à Shopee com o seu código de afiliada, e a comissão cai direto na sua conta.</figcaption>
+    </figure>
+  </section>
+
+  <section class="sec" id="como-funciona" aria-labelledby="t-como">
+    <div class="sec-label"><p class="overline">Operação</p><h2 id="t-como">Como funciona</h2></div>
+    <div class="sec-body">
+      <ol class="flow" id="flow"></ol>
+    </div>
+  </section>
+
+  <section class="sec" id="escopo" aria-labelledby="t-escopo">
+    <div class="sec-label"><p class="overline">Piloto</p><h2 id="t-escopo">Escopo</h2></div>
+    <div class="sec-body">
+      <div class="specs" id="specs"></div>
+      <div class="cols">
+        <div><h3>Está incluído</h3><ul class="checks yes" id="incluido"></ul></div>
+        <div><h3>Fica fora do piloto</h3><ul class="checks no" id="fora"></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="requisitos" aria-labelledby="t-req">
+    <div class="sec-label"><p class="overline">Antes de começar</p><h2 id="t-req">O que preciso de você</h2></div>
+    <div class="sec-body">
+      <ol class="checks req" id="req"></ol>
+      <p class="note">O prazo de implantação começa a contar quando todos estes itens estiverem entregues.</p>
+    </div>
+  </section>
+
+  <section class="sec" id="cronograma" aria-labelledby="t-crono">
+    <div class="sec-label"><p class="overline">Etapas</p><h2 id="t-crono">Cronograma</h2></div>
+    <div class="sec-body">
+      <p class="sec-intro" id="crono-intro"></p>
+      <div class="gantt" id="gantt" role="img" aria-describedby="gantt-desc"></div>
+      <p class="sr-only" id="gantt-desc"></p>
+    </div>
+  </section>
+
+  <section class="sec" id="investimento" aria-labelledby="t-inv">
+    <div class="sec-label"><p class="overline">Valores</p><h2 id="t-inv">Investimento</h2></div>
+    <div class="sec-body">
+      <div class="price" id="price"></div>
+      <div class="paychart" id="paychart"></div>
+      <p class="note" id="inv-note"></p>
+      <div class="after" id="after"></div>
+    </div>
+  </section>
+
+  <section class="sec" id="condicoes" aria-labelledby="t-cond">
+    <div class="sec-label"><p class="overline">Termos</p><h2 id="t-cond">Condições</h2></div>
+    <div class="sec-body">
+      <dl class="terms" id="terms"></dl>
+    </div>
+  </section>
+
+  <section class="sec" id="aceite" aria-labelledby="t-aceite">
+    <div class="sec-label"><p class="overline">Próximo passo</p><h2 id="t-aceite">Aceite</h2></div>
+    <div class="sec-body">
+      <div class="accept">
+        <div class="step" id="step-wa">
+          <p class="overline" id="wa-over">1 · Aceitar</p>
+          <p id="wa-text">Envie a mensagem abaixo pelo WhatsApp. Ela já leva o número e a data desta proposta.</p>
+          <div class="msgbox" id="msgbox"></div>
+          <div class="actions">
+            <a class="btn btn-primary" id="btn-wa" target="_blank" rel="noopener">Aceitar pelo WhatsApp</a>
+            <button class="btn btn-ghost" id="btn-copy" type="button">Copiar mensagem</button>
+          </div>
+          <p class="copy-status" id="copy-status" aria-live="polite"></p>
+          <p class="note">WhatsApp da YATECH: <span class="num" id="num"></span></p>
+        </div>
+        <div class="step" id="step-pay">
+          <p class="overline" id="pay-over">2 · Pagar a implantação</p>
+          <p id="pay-text"></p>
+          <div class="actions" id="pay-actions"></div>
+          <div class="qr-wrap" id="qr-wrap" hidden>
+            <div class="qr" id="qr" aria-hidden="true"></div>
+            <p class="note"><span id="qr-hint">Pelo computador ou no papel, aponte a câmera do celular para o código.</span><br><span class="mono link-text" id="pay-url"></span></p>
+          </div>
+          <p class="note">A implantação começa com o pagamento confirmado e os itens da lista entregues.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot-in">
+    <img class="logo-screen" src="yatech-logo-light.png" alt="YATECH Automação" width="548" height="139">
+    <img class="logo-print" src="yatech-logo-light.png" alt="YATECH Automação" width="548" height="139">
+    <span>YATECH Automação · CNPJ 55.307.234/0001-78 · Jacobina, Bahia</span>
+    <span class="mono" id="f-versao"></span>
+  </div>
+</footer>
+
+<div class="tip" id="tip" hidden></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcode-generator/1.4.4/qrcode.min.js"></script>
+<script>
+/* ===== Dados da proposta: troque só este bloco para uma nova proposta ===== */
+/* Texto entre colchetes, como "[Nome da cliente]", aparece destacado como pendente. */
+const PROPOSTA = {
+  numero: "2026-1022-01",
+  emitidaEm: "2026-10-22",
+  validaAte: "2026-10-29",
+  rascunho: false,
+
+  cliente: { nome: "Kaylla Nunes", marca: "Sua marca", arroba: "@suamarca" },   // marca e @ do exemplo de publicação
+  contato: { nome: "Yuri", whatsapp: "5571991857564" },          // só dígitos, com DDI
+  pagamento: {
+    linkImplantacao: "",                       // link de checkout (ex.: Asaas); vazio = usa o Pix abaixo
+    formas: "Pix ou cartão de crédito",        // formas aceitas na proposta como um todo
+    formasLink: "",                            // formas disponíveis no link, se houver
+    pixPeloWhatsApp: false,
+    pix: {                                     // Pix com valor fixo (QR Code e copia e cola); remova para não usar
+      chave: "55307234000178",                 // CNPJ só com dígitos
+      chaveExibida: "55.307.234/0001-78",
+      tipo: "CNPJ",
+      nome: "YATECH LTDA",                     // sem acentos, até 25 caracteres
+      cidade: "JACOBINA",                      // sem acentos, até 15 caracteres
+      banco: "Nubank",
+      txid: "PROP2026102201"                   // só letras e números, até 25 caracteres
+    },
+    cartaoSobPedido: true                      // oferece link de cartão pelo WhatsApp
+  },
+
+  lead: "Um piloto acompanhado de 60 dias para publicar ofertas de casa e enxoval com a sua marca e os seus links de afiliada, sem precisar garimpar produto por produto.",
+
+  fluxo: [
+    { t: "Busca", d: "O sistema acompanha as ofertas da Shopee nas categorias de casa e enxoval ao longo do dia." },
+    { t: "Seleção", d: "Cada oferta passa por critérios de avaliação, desconto e preço, e pelo perfil de produtos da sua marca." },
+    { t: "Publicação", d: "A mensagem sai com a sua arte, o seu texto e o seu link, em horários programados e num ritmo que cresce aos poucos." },
+    { t: "Acompanhamento", d: "Você aprova prévias e recebe um resumo diário no WhatsApp. Uma vez por mês, revisamos as preferências." }
+  ],
+
+  capacidade: [
+    { n: "1", t: "número de WhatsApp" },
+    { n: "até 3", t: "grupos com a mesma seleção" },
+    { n: "até 5", t: "famílias de produtos" },
+    { n: "1", t: "conta de afiliada Shopee" }
+  ],
+
+  incluido: [
+    "Configuração da operação: conta de afiliada, número, grupos, horários e links",
+    "Perfil de produtos da sua marca em até 5 famílias, como cama, banho, mesa, cozinha e organização",
+    "Modelo de arte com o nome da sua marca e uma paleta escolhida entre 3 opções",
+    "Textos das publicações no tom da sua marca",
+    "Prévias para aprovação e resumo diário no seu WhatsApp",
+    "Revisão mensal das preferências de produtos",
+    "Suporte em horário comercial"
+  ],
+  fora: [
+    "Atendimento aos membros dos grupos",
+    "Captação de membros ou tráfego pago",
+    "Garantia de vendas ou de comissões",
+    "Desenvolvimento sob medida",
+    "Criação de identidade visual completa (sob consulta)",
+    "Chip e linha de WhatsApp"
+  ],
+
+  requisitos: [
+    "Conta de afiliada da Shopee aprovada, com o seu ID de afiliada",
+    "Acesso à API de afiliados da Shopee, solicitado na sua conta. Eu oriento o pedido.",
+    "Um chip só para a operação, de preferência já em uso há algumas semanas, e um celular para conectar",
+    "Os grupos criados por você, com o número da operação como administrador",
+    "Um número seu para aprovar prévias e receber o resumo diário",
+    "Nome da marca, @ e logo, se tiver",
+    "Nas primeiras semanas, votar nas sugestões de produtos para calibrar o perfil"
+  ],
+
+  investimento: { implantacao: 490, mensalidade: 259, mesesPiloto: 2 },
+  pendentes: [],
+
+  cronograma: {
+    eixoMax: 120,
+    fases: [
+      { t: "Implantação", d: "7 a 15 dias úteis, a partir do aceite", ini: 0, fim: 10, ate: 21, tip: "Implantação: 7 a 15 dias úteis (até cerca de 21 dias corridos)" },
+      { t: "Operação assistida", d: "5 dias publicando, sem custo", ini: 21, fim: 26, tip: "Operação assistida: 5 dias sem custo, com ajustes" },
+      { t: "Mês 1 do piloto", d: "1ª mensalidade no início", ini: 26, fim: 56, tip: "Mês 1: 30 dias. 1ª mensalidade no início" },
+      { t: "Mês 2 do piloto", d: "Revisão das preferências e 2ª mensalidade", ini: 56, fim: 86, tip: "Mês 2: 30 dias. Revisão das preferências e 2ª mensalidade no início" },
+      { t: "Avaliação do piloto", d: "Você decide se continua", marco: 86, tip: "Avaliação ao fim dos 60 dias de operação" },
+      { t: "Continuidade", d: "Opcional · mesma mensalidade, sem fidelidade", ini: 86, ate: 120, soft: true, tip: "Se continuar: a operação segue pela mesma mensalidade, sem fidelidade" }
+    ]
+  },
+
+  continuidade: {
+    continuar: [
+      "A operação segue igual, sem nova taxa de implantação",
+      "Mensalidade de {mensalidade}, cobrada todo mês na mesma data",
+      "Sem fidelidade: para encerrar, basta avisar com 30 dias de antecedência"
+    ],
+    encerrar: [
+      "Basta avisar até o último dia do mês 2. Não há multa",
+      "Não há nenhuma cobrança depois do mês 2",
+      "A operação é desligada. O número, os grupos e a conta de afiliada continuam seus"
+    ]
+  },
+
+  condicoes: [
+    ["Prazo de implantação", "Até 15 dias úteis, contados a partir do pagamento da implantação e da entrega dos itens da lista. Atrasos de terceiros, como a liberação da API da Shopee ou a ativação da linha, suspendem a contagem."],
+    ["Início da operação", "Depois de 5 dias seguidos publicando sem falha que precise de correção manual. A partir desse dia vale a mensalidade e começam os 60 dias do piloto."],
+    ["Pagamento", "Implantação no aceite. Mensalidade a cada 30 dias, a partir do início da operação. Por {formas}."],
+    ["Número de WhatsApp", "O número é seu. O WhatsApp pode restringir números que automatizam grupos. A operação segue um ritmo gradual para reduzir esse risco, mas não consegue eliminá-lo."],
+    ["Comissões", "São suas e são pagas pela Shopee diretamente na sua conta de afiliada."],
+    ["Resultados", "Não há promessa de faturamento. O objetivo é reduzir o trabalho de encontrar, selecionar e publicar ofertas."],
+    ["Depois do piloto", "No fim do mês 2, você decide se continua. Se continuar, a operação segue pelo mesmo valor mensal, sem nova implantação e sem fidelidade; para encerrar depois, basta avisar com 30 dias de antecedência. Se não continuar, basta avisar até o último dia do mês 2, sem multa."],
+    ["Validade", "Esta proposta vale até {validade}."]
+  ]
+};
+
+/* ===== Renderização (não precisa mexer para uma nova proposta) ===== */
+(function () {
+  const P = PROPOSTA;
+  const $ = (id) => document.getElementById(id);
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c]));
+  const isPend = (s) => typeof s === "string" && /^\[.*\]$/.test(s.trim());
+  const pend = (path) => (P.pendentes || []).includes(path);
+  const show = (s) => isPend(s) ? `<span class="pend">${esc(s.slice(1, -1))}</span>` : esc(s);
+  const plain = (s) => isPend(s) ? s.slice(1, -1) : s;
+  const brl = (n) => new Intl.NumberFormat("pt-BR", { style: "currency", currency: "BRL", maximumFractionDigits: 0 }).format(n);
+  const money = (n, path) => pend(path) ? `<span class="pend">${brl(n)}</span>` : brl(n);
+  const dataBR = (iso) => { const [y, m, d] = iso.split("-"); return `${d}/${m}/${y}`; };
+
+  const inv = P.investimento;
+  const total = inv.implantacao + inv.mensalidade * inv.mesesPiloto;
+  const temPendencia = P.rascunho || [P.cliente.nome, P.cliente.marca, P.cliente.arroba, P.contato.whatsapp].some(isPend) || (P.pendentes || []).length > 0;
+  $("draft").hidden = !temPendencia;
+
+  // Capa
+  $("h-numero").textContent = `Proposta comercial · Nº ${P.numero}`;
+  $("h-lead").textContent = P.lead;
+  $("h-meta").innerHTML = [
+    ["Para", show(P.cliente.nome)],
+    ["Emitida em", dataBR(P.emitidaEm)],
+    ["Válida até", dataBR(P.validaAte)]
+  ].map(([k, v]) => `<div><dt class="overline">${k}</dt><dd>${v}</dd></div>`).join("");
+
+  const marca = plain(P.cliente.marca);
+  $("c-grupo").innerHTML = `${show(P.cliente.marca)} · Casa e enxoval`;
+  $("c-avatar").textContent = marca.split(/\s+/).map((w) => w[0]).join("").slice(0, 2).toUpperCase() || "SM";
+  $("c-artbrand").textContent = marca.toUpperCase();
+  $("c-rodape").innerHTML = `curadoria ${show(P.cliente.arroba)}`;
+
+  // Fluxo
+  $("flow").innerHTML = P.fluxo.map((s) => `<li><h3>${esc(s.t)}</h3><p>${esc(s.d)}</p></li>`).join("");
+
+  // Escopo
+  $("specs").innerHTML = P.capacidade.map((c) => `<div><span class="n">${esc(c.n)}</span><span class="t">${esc(c.t)}</span></div>`).join("");
+  $("incluido").innerHTML = P.incluido.map((i) => `<li><span>${esc(i)}</span></li>`).join("");
+  $("fora").innerHTML = P.fora.map((i) => `<li><span>${esc(i)}</span></li>`).join("");
+  $("req").innerHTML = P.requisitos.map((i) => `<li><span>${esc(i)}</span></li>`).join("");
+
+  // Cronograma
+  const C = P.cronograma, max = C.eixoMax, pct = (d) => `${(d / max) * 100}%`;
+  const ticks = [];
+  for (let t = 0; t <= max; t += 30) ticks.push(t);
+  const grid = ticks.map((t) => `<span class="g-grid" style="left:${pct(t)}"></span>`).join("");
+  let g = `<div class="g-axis"><span class="g-spacer"></span><div class="g-scale">${ticks.map((t) => `<span class="g-tick" style="left:${pct(t)}">dia ${t}</span>`).join("")}</div></div>`;
+  C.fases.forEach((f) => {
+    let marks = "";
+    if (f.marco != null) {
+      marks = `<span class="g-dot" style="left:${pct(f.marco)}" data-tip="${esc(f.tip)}" tabindex="0" aria-label="${esc(f.tip)}"></span>`;
+    } else if (f.soft) {
+      marks = `<span class="g-bar soft" style="left:${pct(f.ini)};width:${pct(f.ate - f.ini)}" data-tip="${esc(f.tip)}" tabindex="0" aria-label="${esc(f.tip)}"></span>`;
+    } else {
+      marks = `<span class="g-bar" style="left:${pct(f.ini)};width:calc(${pct(f.fim - f.ini)} - 1px)" data-tip="${esc(f.tip)}" tabindex="0" aria-label="${esc(f.tip)}"></span>`;
+      if (f.ate) marks += `<span class="g-bar soft" style="left:calc(${pct(f.fim)} + 2px);width:calc(${pct(f.ate - f.fim)} - 3px)" data-tip="${esc(f.tip)}" aria-hidden="true"></span>`;
+    }
+    g += `<div class="g-row"><div class="g-label"><b>${esc(f.t)}</b><span>${esc(f.d)}</span></div><div class="g-track">${grid}${marks}</div></div>`;
+  });
+  g += `<p class="g-foot">Dias corridos a partir do aceite, considerando o prazo máximo de implantação. Na implantação, o trecho mais claro é a margem entre 7 e 15 dias úteis. Na continuidade, indica que ela é opcional.</p>`;
+  $("gantt").innerHTML = g;
+  $("gantt-desc").textContent = C.fases.map((f) => f.tip).join(". ") + ".";
+  $("crono-intro").textContent = "A mensalidade só começa depois de 5 dias seguidos de operação sem falha. A partir desse dia, contam os 60 dias do piloto.";
+
+  // Investimento
+  $("price").innerHTML = `
+    <div><span class="overline">Implantação</span><span class="v">${money(inv.implantacao, "investimento.implantacao")}</span><span class="d">Pagamento único, no aceite</span></div>
+    <div><span class="overline">Mensalidade</span><span class="v">${money(inv.mensalidade, "investimento.mensalidade")}<small> /mês</small></span><span class="d">A partir do início da operação</span></div>
+    <div class="total"><span class="overline">Total do piloto</span><span class="v">${pend("investimento.mensalidade") ? `<span class="pend">${brl(total)}</span>` : brl(total)}</span><span class="d">Implantação e ${inv.mesesPiloto} mensalidades</span></div>`;
+
+  const pays = [
+    { q: "No aceite", v: inv.implantacao, d: "Implantação" },
+    { q: "Início da operação", v: inv.mensalidade, d: "1ª mensalidade" },
+    { q: "30 dias depois", v: inv.mensalidade, d: "2ª mensalidade" }
+  ];
+  const pmax = Math.max(...pays.map((p) => p.v));
+  let acum = 0;
+  $("paychart").innerHTML = `<p class="pc-title">Quando cada pagamento acontece</p>` + pays.map((p) => {
+    acum += p.v;
+    const w = (p.v / pmax) * 78;
+    const tip = `${p.d}: ${brl(p.v)} · acumulado ${brl(acum)}`;
+    return `<div class="pc-row"><span class="pc-label">${esc(p.q)}</span><div class="pc-track"><span class="pc-bar" style="width:${w}%" data-tip="${esc(tip)}" tabindex="0" aria-label="${esc(tip)}"></span><span class="pc-val">${brl(p.v)}</span></div></div>`;
+  }).join("") + (() => {
+    const w = (inv.mensalidade / pmax) * 78;
+    const tip = `Se continuar: ${brl(inv.mensalidade)} por mês, sem fidelidade`;
+    return `<div class="pc-row later"><span class="pc-label">Do mês 3 em diante, se continuar</span><div class="pc-track"><span class="pc-bar soft" style="width:${w}%" data-tip="${esc(tip)}" tabindex="0" aria-label="${esc(tip)}"></span><span class="pc-val">${brl(inv.mensalidade)}/mês</span></div></div>`;
+  })();
+  $("inv-note").textContent = `Pagamentos por ${P.pagamento.formas}. Os 5 dias de operação assistida não são cobrados.`;
+
+  // Depois do piloto
+  const fill = (s) => s.replace("{mensalidade}", brl(inv.mensalidade));
+  $("after").innerHTML = `
+    <div class="after-head"><h3>Depois dos 60 dias</h3><p>No fim do mês 2, fazemos a avaliação e você escolhe:</p></div>
+    <div class="cols">
+      <div><h4>Se quiser continuar</h4><ul class="checks yes">${P.continuidade.continuar.map((i) => `<li><span>${esc(fill(i))}</span></li>`).join("")}</ul></div>
+      <div><h4>Se preferir encerrar</h4><ul class="checks no">${P.continuidade.encerrar.map((i) => `<li><span>${esc(fill(i))}</span></li>`).join("")}</ul></div>
+    </div>`;
+
+  // Condições
+  const linkPg = P.pagamento.linkImplantacao;
+  const pix = !linkPg && P.pagamento.pix ? P.pagamento.pix : null;
+  const condicoes = (linkPg || pix) ? [["Aceite", "O pagamento da implantação confirma o aceite das condições desta proposta."], ...P.condicoes] : P.condicoes;
+  $("terms").innerHTML = condicoes.map(([k, v]) => `<div><dt>${esc(k)}</dt><dd>${esc(v.replace("{validade}", dataBR(P.validaAte)).replace("{formas}", P.pagamento.formas))}</dd></div>`).join("");
+
+  // Aceite
+  const msg = pix
+    ? `Olá, ${P.contato.nome}. Aceito a proposta nº ${P.numero} (Operação de ofertas para grupos de WhatsApp, emitida em ${dataBR(P.emitidaEm)}) e paguei a implantação por Pix. Segue o comprovante.`
+    : linkPg
+    ? `Olá, ${P.contato.nome}. Paguei a implantação da proposta nº ${P.numero} (Operação de ofertas para grupos de WhatsApp, emitida em ${dataBR(P.emitidaEm)}). Podemos combinar os próximos passos?`
+    : `Olá, ${P.contato.nome}. Li a proposta nº ${P.numero} (Operação de ofertas para grupos de WhatsApp, emitida em ${dataBR(P.emitidaEm)}) e aceito as condições.\nNome completo:\nCPF ou CNPJ:`;
+  $("msgbox").textContent = msg;
+  const wa = $("btn-wa");
+  const fone = String(P.contato.whatsapp).replace(/\D/g, "");
+  if (isPend(P.contato.whatsapp) || fone.length < 12) {
+    wa.setAttribute("aria-disabled", "true");
+    wa.removeAttribute("href");
+    $("num").innerHTML = show(P.contato.whatsapp);
+  } else {
+    wa.href = `https://wa.me/${fone}?text=${encodeURIComponent(msg)}`;
+    const f = fone.slice(2);
+    $("num").textContent = `(${f.slice(0, 2)}) ${f.slice(2, f.length - 4)}-${f.slice(-4)}`;
+  }
+
+  $("btn-copy").addEventListener("click", () => {
+    const status = $("copy-status");
+    const fallback = () => {
+      const r = document.createRange(); r.selectNodeContents($("msgbox"));
+      const s = window.getSelection(); s.removeAllRanges(); s.addRange(r);
+      status.textContent = "Mensagem selecionada. Copie com o menu do aparelho.";
+    };
+    try {
+      navigator.clipboard.writeText(msg).then(() => { status.textContent = "Mensagem copiada."; }, fallback);
+    } catch (e) { fallback(); }
+  });
+
+  if (linkPg) {
+    $("step-pay").style.order = "-1";
+    $("pay-over").textContent = "1 · Aceitar e pagar";
+    $("wa-over").textContent = "2 · Combinar o início";
+    $("wa-text").textContent = "Depois do pagamento, me avise pelo WhatsApp para combinarmos a entrega dos itens da lista.";
+    wa.textContent = "Avisar pelo WhatsApp";
+    const pixNota = P.pagamento.pixPeloWhatsApp ? " Se preferir Pix, me chame no WhatsApp que eu envio a chave." : "";
+    $("pay-text").innerHTML = `Pague a implantação de <b>${brl(inv.implantacao)}</b> pelo link, por ${esc(P.pagamento.formasLink || P.pagamento.formas)}.${pixNota} O pagamento confirma o aceite desta proposta.`;
+    $("pay-actions").innerHTML = `<a class="btn btn-primary" href="${esc(linkPg)}" target="_blank" rel="noopener">Pagar implantação · ${brl(inv.implantacao)}</a>`;
+    if (typeof qrcode === "function") {
+      const q = qrcode(0, "M"); q.addData(linkPg); q.make();
+      $("qr").innerHTML = q.createSvgTag({ cellSize: 4, margin: 0, scalable: true });
+      $("pay-url").textContent = linkPg;
+      $("qr-wrap").hidden = false;
+    }
+  } else if (pix) {
+    // Pix com valor fixo (padrão BR Code do Banco Central)
+    const tlv = (id, v) => id + String(v.length).padStart(2, "0") + v;
+    const crc16 = (s) => {
+      let c = 0xFFFF;
+      for (let i = 0; i < s.length; i++) {
+        c ^= s.charCodeAt(i) << 8;
+        for (let j = 0; j < 8; j++) { c = (c & 0x8000) ? ((c << 1) ^ 0x1021) : (c << 1); c &= 0xFFFF; }
+      }
+      return c.toString(16).toUpperCase().padStart(4, "0");
+    };
+    let code = tlv("00", "01") + tlv("26", tlv("00", "br.gov.bcb.pix") + tlv("01", pix.chave)) +
+      tlv("52", "0000") + tlv("53", "986") + tlv("54", inv.implantacao.toFixed(2)) + tlv("58", "BR") +
+      tlv("59", pix.nome.slice(0, 25)) + tlv("60", pix.cidade.slice(0, 15)) + tlv("62", tlv("05", pix.txid)) + "6304";
+    code += crc16(code);
+
+    $("step-pay").style.order = "-1";
+    $("pay-over").textContent = "1 · Aceitar e pagar por Pix";
+    $("wa-over").textContent = "2 · Enviar o comprovante";
+    $("wa-text").textContent = "Depois do pagamento, envie o comprovante pelo WhatsApp para combinarmos a entrega dos itens da lista.";
+    wa.textContent = "Enviar comprovante pelo WhatsApp";
+    const cartao = P.pagamento.cartaoSobPedido ? " Se preferir cartão de crédito, me chame no WhatsApp que eu envio um link de pagamento." : "";
+    $("pay-text").innerHTML = `Pague a implantação de <b>${brl(inv.implantacao)}</b> por Pix, lendo o QR Code ou usando a chave abaixo. O pagamento confirma o aceite desta proposta.${cartao}`;
+    const box = $("pay-actions");
+    box.className = "pix-box";
+    box.innerHTML = `<dl class="pix-key">
+        <div><dt class="overline">Chave Pix (${esc(pix.tipo)})</dt><dd class="mono">${esc(pix.chaveExibida)}</dd></div>
+        <div><dt class="overline">Favorecido</dt><dd>${esc(pix.nome)} · ${esc(pix.banco)}</dd></div>
+        <div><dt class="overline">Valor</dt><dd class="mono">${brl(inv.implantacao)},00</dd></div>
+      </dl>`;
+    if (typeof qrcode === "function") {
+      const q = qrcode(0, "M"); q.addData(code); q.make();
+      $("qr").innerHTML = q.createSvgTag({ cellSize: 4, margin: 0, scalable: true });
+      $("qr-hint").textContent = "Abra o app do seu banco, escolha pagar com Pix e aponte a câmera para o código. O valor já vem preenchido.";
+      $("pay-url").textContent = "";
+      $("qr-wrap").hidden = false;
+    }
+  } else {
+    $("pay-text").innerHTML = `Depois do aceite, você recebe pelo WhatsApp o link de pagamento da implantação: <b>${brl(inv.implantacao)}</b>, por ${esc(P.pagamento.formas)}.`;
+  }
+
+  $("f-versao").textContent = `Proposta nº ${P.numero} · ${dataBR(P.emitidaEm)}`;
+
+  // PDF só fora de molduras (o visualizador de artifacts não abre a impressão)
+  let topo = false;
+  try { topo = window.top === window.self; } catch (e) { topo = false; }
+  if (topo) {
+    const b = $("btn-pdf");
+    b.hidden = false;
+    b.addEventListener("click", () => window.print());
+  }
+
+  // Tooltip
+  const tip = $("tip");
+  const place = (el, x, y) => { tip.textContent = el.dataset.tip; tip.hidden = false; tip.style.left = `${x}px`; tip.style.top = `${y}px`; };
+  document.querySelectorAll("[data-tip]").forEach((el) => {
+    el.addEventListener("pointermove", (e) => place(el, e.clientX, e.clientY));
+    el.addEventListener("pointerleave", () => { tip.hidden = true; });
+    el.addEventListener("focus", () => { const r = el.getBoundingClientRect(); place(el, r.left + r.width / 2, r.top); });
+    el.addEventListener("blur", () => { tip.hidden = true; });
+  });
+})();
+</script>
+
+</body>
+</html>
